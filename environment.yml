@@ -1,4 +1,4 @@
-name: lasers
+name: personal_laser
 channels:
 - conda-forge
 dependencies:
