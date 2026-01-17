@@ -1,0 +1,22 @@
+name: lasers
+channels:
+- conda-forge
+dependencies:
+- python
+- numpy 
+- matplotlib
+- scipy
+- sympy
+- ipython
+- finesse
+- jupyter
+- gpstime
+- poppler
+- ipympl
+- pip
+- pip:
+    - beamtrace
+    - PyPDF2
+    - jupyter-tikz
+    - jupyter-book
+    - jupyterlab_myst
