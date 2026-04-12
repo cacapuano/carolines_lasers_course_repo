@@ -1,0 +1,2956 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Wolfram 14.2' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       154,          7]
+NotebookDataLength[    117445,       2948]
+NotebookOptionsPosition[    116728,       2927]
+NotebookOutlinePosition[    117123,       2943]
+CellTagsIndexPosition[    117080,       2940]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"Clear", "[", "\"\<Global`*\>\"", "]"}], "\[IndentingNewLine]", 
+  "\n", 
+  RowBox[{"(*", 
+   RowBox[{
+   "Define", " ", "the", " ", "symbolic", " ", "11", "x11", " ", "matrix", " ",
+     "A"}], "*)"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"A", "=", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{
+       "0", ",", "0", ",", "0", ",", "0", ",", "0", ",", "0", ",", "0", ",", 
+        "0", ",", "0", ",", "0", ",", "0"}], "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{
+       "tbs", ",", "0", ",", "0", ",", "0", ",", "0", ",", "0", ",", "0", ",", 
+        RowBox[{
+         RowBox[{"-", "ritmx"}], " ", 
+         RowBox[{"Exp", "[", 
+          RowBox[{
+           RowBox[{"-", "I"}], " ", "phix"}], "]"}]}], ",", "0", ",", "0", ",",
+         "0"}], "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"-", "rbs"}], ",", "0", ",", "0", ",", "0", ",", "0", ",", 
+        "0", ",", "0", ",", "0", ",", 
+        RowBox[{
+         RowBox[{"-", "ritmy"}], " ", 
+         RowBox[{"Exp", "[", 
+          RowBox[{
+           RowBox[{"-", "I"}], " ", "phiy"}], "]"}]}], ",", "0", ",", "0"}], 
+       "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{"0", ",", 
+        RowBox[{"titmx", " ", 
+         RowBox[{"Exp", "[", 
+          RowBox[{
+           RowBox[{"-", "I"}], " ", "phix"}], "]"}]}], ",", "0", ",", "0", ",", 
+        RowBox[{
+         RowBox[{"-", "retmx"}], " ", 
+         RowBox[{"Exp", "[", 
+          RowBox[{
+           RowBox[{"-", "I"}], " ", "PhiX"}], "]"}]}], ",", "0", ",", "0", ",",
+         "0", ",", "0", ",", "0", ",", "0"}], "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{"0", ",", "0", ",", "0", ",", 
+        RowBox[{
+         RowBox[{"-", "retmx"}], " ", 
+         RowBox[{"Exp", "[", 
+          RowBox[{
+           RowBox[{"-", "I"}], " ", "PhiX"}], "]"}]}], ",", "0", ",", "0", ",",
+         "0", ",", "0", ",", "0", ",", "0", ",", "0"}], "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{"0", ",", "0", ",", 
+        RowBox[{"titmy", " ", 
+         RowBox[{"Exp", "[", 
+          RowBox[{
+           RowBox[{"-", "I"}], " ", "phiy"}], "]"}]}], ",", "0", ",", "0", ",",
+         "0", ",", 
+        RowBox[{
+         RowBox[{"-", "retmy"}], " ", 
+         RowBox[{"Exp", "[", 
+          RowBox[{
+           RowBox[{"-", "I"}], " ", "PhiY"}], "]"}]}], ",", "0", ",", "0", ",",
+         "0", ",", "0"}], "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{"0", ",", "0", ",", "0", ",", "0", ",", "0", ",", 
+        RowBox[{
+         RowBox[{"-", "retmy"}], " ", 
+         RowBox[{"Exp", "[", 
+          RowBox[{
+           RowBox[{"-", "I"}], " ", "PhiY"}], "]"}]}], ",", "0", ",", "0", ",",
+         "0", ",", "0", ",", "0"}], "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{"0", ",", 
+        RowBox[{"ritmx", " ", 
+         RowBox[{"Exp", "[", 
+          RowBox[{
+           RowBox[{"-", "I"}], " ", "phix"}], "]"}]}], ",", "0", ",", "0", ",", 
+        RowBox[{"titmx", " ", 
+         RowBox[{"Exp", "[", 
+          RowBox[{
+           RowBox[{"-", "I"}], " ", "phix"}], "]"}]}], ",", "0", ",", "0", ",",
+         "0", ",", "0", ",", "0", ",", "0"}], "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{"0", ",", "0", ",", 
+        RowBox[{"ritmy", " ", 
+         RowBox[{"Exp", "[", 
+          RowBox[{
+           RowBox[{"-", "I"}], " ", "phiy"}], "]"}]}], ",", "0", ",", "0", ",",
+         "0", ",", 
+        RowBox[{"titmy", " ", 
+         RowBox[{"Exp", "[", 
+          RowBox[{
+           RowBox[{"-", "I"}], " ", "phiy"}], "]"}]}], ",", "0", ",", "0", ",",
+         "0", ",", "0"}], "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{
+       "0", ",", "0", ",", "0", ",", "0", ",", "0", ",", "0", ",", "0", ",", 
+        RowBox[{"tbs", " ", 
+         RowBox[{"Exp", "[", 
+          RowBox[{
+           RowBox[{"-", "I"}], " ", "phix"}], "]"}]}], ",", 
+        RowBox[{"rbs", " ", 
+         RowBox[{"Exp", "[", 
+          RowBox[{
+           RowBox[{"-", "I"}], " ", "phiy"}], "]"}]}], ",", "0", ",", "0"}], 
+       "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{
+       "0", ",", "0", ",", "0", ",", "0", ",", "0", ",", "0", ",", "0", ",", 
+        RowBox[{
+         RowBox[{"-", "rbs"}], " ", 
+         RowBox[{"Exp", "[", 
+          RowBox[{
+           RowBox[{"-", "I"}], " ", "phix"}], "]"}]}], ",", 
+        RowBox[{"tbs", " ", 
+         RowBox[{"Exp", "[", 
+          RowBox[{
+           RowBox[{"-", "I"}], " ", "phiy"}], "]"}]}], ",", "0", ",", "0"}], 
+       "}"}]}], "}"}]}], ";"}], "\[IndentingNewLine]", "\n", 
+  RowBox[{"(*", 
+   RowBox[{"Compute", " ", 
+    RowBox[{
+     RowBox[{"(", 
+      RowBox[{"I", "-", "A"}], ")"}], "^", 
+     RowBox[{"(", 
+      RowBox[{"-", "1"}], ")"}]}]}], "*)"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"Minv", "=", 
+    RowBox[{"Simplify", "[", 
+     RowBox[{"Inverse", "[", 
+      RowBox[{
+       RowBox[{"IdentityMatrix", "[", 
+        RowBox[{"Length", "[", "A", "]"}], "]"}], "-", "A"}], "]"}], "]"}]}], 
+   ";"}], "\[IndentingNewLine]", "\n", 
+  RowBox[{"(*", 
+   RowBox[{"Print", " ", "nicely"}], "*)"}]}], "\[IndentingNewLine]", 
+ RowBox[{"Minv", "//", "MatrixForm"}]}], "Input",
+ CellChangeTimes->{{3.9850113490461473`*^9, 3.98501134904828*^9}},
+ CellLabel->"In[70]:=",ExpressionUUID->"c4d14a5c-50ad-4289-bda1-83ad18d1645e"],
+
+Cell[BoxData[
+ TagBox[
+  RowBox[{"(", "\[NoBreak]", GridBox[{
+     {"1", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0"},
+     {
+      FractionBox[
+       RowBox[{
+        SuperscriptBox["\[ExponentialE]", 
+         RowBox[{"3", " ", "\[ImaginaryI]", " ", "phix"}]], " ", 
+        RowBox[{"(", 
+         RowBox[{
+          SuperscriptBox["\[ExponentialE]", 
+           RowBox[{"2", " ", "\[ImaginaryI]", " ", "PhiX"}]], "-", 
+          SuperscriptBox["retmx", "2"]}], ")"}], " ", "tbs"}], 
+       RowBox[{
+        SuperscriptBox["\[ExponentialE]", 
+         RowBox[{
+          RowBox[{"3", " ", "\[ImaginaryI]", " ", "phix"}], "+", 
+          RowBox[{"2", " ", "\[ImaginaryI]", " ", "PhiX"}]}]], "-", 
+        RowBox[{
+         SuperscriptBox["\[ExponentialE]", 
+          RowBox[{"3", " ", "\[ImaginaryI]", " ", "phix"}]], " ", 
+         SuperscriptBox["retmx", "2"]}], "+", 
+        RowBox[{
+         SuperscriptBox["\[ExponentialE]", 
+          RowBox[{"\[ImaginaryI]", " ", 
+           RowBox[{"(", 
+            RowBox[{"phix", "+", 
+             RowBox[{"2", " ", "PhiX"}]}], ")"}]}]], " ", 
+         SuperscriptBox["ritmx", "2"]}], "-", 
+        RowBox[{
+         SuperscriptBox["\[ExponentialE]", 
+          RowBox[{"\[ImaginaryI]", " ", "phix"}]], " ", 
+         SuperscriptBox["retmx", "2"], " ", 
+         SuperscriptBox["ritmx", "2"]}], "-", 
+        RowBox[{
+         SuperscriptBox["\[ExponentialE]", 
+          RowBox[{"\[ImaginaryI]", " ", "PhiX"}]], " ", "retmx", " ", "ritmx",
+          " ", 
+         SuperscriptBox["titmx", "2"]}]}]], 
+      FractionBox[
+       RowBox[{
+        SuperscriptBox["\[ExponentialE]", 
+         RowBox[{"3", " ", "\[ImaginaryI]", " ", "phix"}]], " ", 
+        RowBox[{"(", 
+         RowBox[{
+          SuperscriptBox["\[ExponentialE]", 
+           RowBox[{"2", " ", "\[ImaginaryI]", " ", "PhiX"}]], "-", 
+          SuperscriptBox["retmx", "2"]}], ")"}]}], 
+       RowBox[{
+        SuperscriptBox["\[ExponentialE]", 
+         RowBox[{
+          RowBox[{"3", " ", "\[ImaginaryI]", " ", "phix"}], "+", 
+          RowBox[{"2", " ", "\[ImaginaryI]", " ", "PhiX"}]}]], "-", 
+        RowBox[{
+         SuperscriptBox["\[ExponentialE]", 
+          RowBox[{"3", " ", "\[ImaginaryI]", " ", "phix"}]], " ", 
+         SuperscriptBox["retmx", "2"]}], "+", 
+        RowBox[{
+         SuperscriptBox["\[ExponentialE]", 
+          RowBox[{"\[ImaginaryI]", " ", 
+           RowBox[{"(", 
+            RowBox[{"phix", "+", 
+             RowBox[{"2", " ", "PhiX"}]}], ")"}]}]], " ", 
+         SuperscriptBox["ritmx", "2"]}], "-", 
+        RowBox[{
+         SuperscriptBox["\[ExponentialE]", 
+          RowBox[{"\[ImaginaryI]", " ", "phix"}]], " ", 
+         SuperscriptBox["retmx", "2"], " ", 
+         SuperscriptBox["ritmx", "2"]}], "-", 
+        RowBox[{
+         SuperscriptBox["\[ExponentialE]", 
+          RowBox[{"\[ImaginaryI]", " ", "PhiX"}]], " ", "retmx", " ", "ritmx",
+          " ", 
+         SuperscriptBox["titmx", "2"]}]}]], "0", 
+      FractionBox[
+       RowBox[{
+        SuperscriptBox["\[ExponentialE]", 
+         RowBox[{"\[ImaginaryI]", " ", 
+          RowBox[{"(", 
+           RowBox[{"phix", "+", "PhiX"}], ")"}]}]], " ", "retmx", " ", 
+        "ritmx", " ", "titmx"}], 
+       RowBox[{
+        SuperscriptBox["\[ExponentialE]", 
+         RowBox[{
+          RowBox[{"3", " ", "\[ImaginaryI]", " ", "phix"}], "+", 
+          RowBox[{"2", " ", "\[ImaginaryI]", " ", "PhiX"}]}]], "-", 
+        RowBox[{
+         SuperscriptBox["\[ExponentialE]", 
+          RowBox[{"3", " ", "\[ImaginaryI]", " ", "phix"}]], " ", 
+         SuperscriptBox["retmx", "2"]}], "+", 
+        RowBox[{
+         SuperscriptBox["\[ExponentialE]", 
+          RowBox[{"\[ImaginaryI]", " ", 
+           RowBox[{"(", 
+            RowBox[{"phix", "+", 
+             RowBox[{"2", " ", "PhiX"}]}], ")"}]}]], " ", 
+         SuperscriptBox["ritmx", "2"]}], "-", 
+        RowBox[{
+         SuperscriptBox["\[ExponentialE]", 
+          RowBox[{"\[ImaginaryI]", " ", "phix"}]], " ", 
+         SuperscriptBox["retmx", "2"], " ", 
+         SuperscriptBox["ritmx", "2"]}], "-", 
+        RowBox[{
+         SuperscriptBox["\[ExponentialE]", 
+          RowBox[{"\[ImaginaryI]", " ", "PhiX"}]], " ", "retmx", " ", "ritmx",
+          " ", 
+         SuperscriptBox["titmx", "2"]}]}]], 
+      RowBox[{"-", 
+       FractionBox[
+        RowBox[{
+         SuperscriptBox["\[ExponentialE]", 
+          RowBox[{"\[ImaginaryI]", " ", 
+           RowBox[{"(", 
+            RowBox[{"phix", "+", 
+             RowBox[{"2", " ", "PhiX"}]}], ")"}]}]], " ", "ritmx", " ", 
+         "titmx"}], 
+        RowBox[{
+         SuperscriptBox["\[ExponentialE]", 
+          RowBox[{
+           RowBox[{"3", " ", "\[ImaginaryI]", " ", "phix"}], "+", 
+           RowBox[{"2", " ", "\[ImaginaryI]", " ", "PhiX"}]}]], "-", 
+         RowBox[{
+          SuperscriptBox["\[ExponentialE]", 
+           RowBox[{"3", " ", "\[ImaginaryI]", " ", "phix"}]], " ", 
+          SuperscriptBox["retmx", "2"]}], "+", 
+         RowBox[{
+          SuperscriptBox["\[ExponentialE]", 
+           RowBox[{"\[ImaginaryI]", " ", 
+            RowBox[{"(", 
+             RowBox[{"phix", "+", 
+              RowBox[{"2", " ", "PhiX"}]}], ")"}]}]], " ", 
+          SuperscriptBox["ritmx", "2"]}], "-", 
+         RowBox[{
+          SuperscriptBox["\[ExponentialE]", 
+           RowBox[{"\[ImaginaryI]", " ", "phix"}]], " ", 
+          SuperscriptBox["retmx", "2"], " ", 
+          SuperscriptBox["ritmx", "2"]}], "-", 
+         RowBox[{
+          SuperscriptBox["\[ExponentialE]", 
+           RowBox[{"\[ImaginaryI]", " ", "PhiX"}]], " ", "retmx", " ", 
+          "ritmx", " ", 
+          SuperscriptBox["titmx", "2"]}]}]]}], "0", "0", 
+      RowBox[{"-", 
+       FractionBox[
+        RowBox[{
+         SuperscriptBox["\[ExponentialE]", 
+          RowBox[{"2", " ", "\[ImaginaryI]", " ", "phix"}]], " ", 
+         RowBox[{"(", 
+          RowBox[{
+           SuperscriptBox["\[ExponentialE]", 
+            RowBox[{"2", " ", "\[ImaginaryI]", " ", "PhiX"}]], "-", 
+           SuperscriptBox["retmx", "2"]}], ")"}], " ", "ritmx"}], 
+        RowBox[{
+         SuperscriptBox["\[ExponentialE]", 
+          RowBox[{
+           RowBox[{"3", " ", "\[ImaginaryI]", " ", "phix"}], "+", 
+           RowBox[{"2", " ", "\[ImaginaryI]", " ", "PhiX"}]}]], "-", 
+         RowBox[{
+          SuperscriptBox["\[ExponentialE]", 
+           RowBox[{"3", " ", "\[ImaginaryI]", " ", "phix"}]], " ", 
+          SuperscriptBox["retmx", "2"]}], "+", 
+         RowBox[{
+          SuperscriptBox["\[ExponentialE]", 
+           RowBox[{"\[ImaginaryI]", " ", 
+            RowBox[{"(", 
+             RowBox[{"phix", "+", 
+              RowBox[{"2", " ", "PhiX"}]}], ")"}]}]], " ", 
+          SuperscriptBox["ritmx", "2"]}], "-", 
+         RowBox[{
+          SuperscriptBox["\[ExponentialE]", 
+           RowBox[{"\[ImaginaryI]", " ", "phix"}]], " ", 
+          SuperscriptBox["retmx", "2"], " ", 
+          SuperscriptBox["ritmx", "2"]}], "-", 
+         RowBox[{
+          SuperscriptBox["\[ExponentialE]", 
+           RowBox[{"\[ImaginaryI]", " ", "PhiX"}]], " ", "retmx", " ", 
+          "ritmx", " ", 
+          SuperscriptBox["titmx", "2"]}]}]]}], "0", "0", "0"},
+     {
+      RowBox[{"-", 
+       FractionBox[
+        RowBox[{
+         SuperscriptBox["\[ExponentialE]", 
+          RowBox[{"3", " ", "\[ImaginaryI]", " ", "phiy"}]], " ", "rbs", " ", 
+         
+         RowBox[{"(", 
+          RowBox[{
+           SuperscriptBox["\[ExponentialE]", 
+            RowBox[{"2", " ", "\[ImaginaryI]", " ", "PhiY"}]], "-", 
+           SuperscriptBox["retmy", "2"]}], ")"}]}], 
+        RowBox[{
+         SuperscriptBox["\[ExponentialE]", 
+          RowBox[{
+           RowBox[{"3", " ", "\[ImaginaryI]", " ", "phiy"}], "+", 
+           RowBox[{"2", " ", "\[ImaginaryI]", " ", "PhiY"}]}]], "-", 
+         RowBox[{
+          SuperscriptBox["\[ExponentialE]", 
+           RowBox[{"3", " ", "\[ImaginaryI]", " ", "phiy"}]], " ", 
+          SuperscriptBox["retmy", "2"]}], "+", 
+         RowBox[{
+          SuperscriptBox["\[ExponentialE]", 
+           RowBox[{"\[ImaginaryI]", " ", 
+            RowBox[{"(", 
+             RowBox[{"phiy", "+", 
+              RowBox[{"2", " ", "PhiY"}]}], ")"}]}]], " ", 
+          SuperscriptBox["ritmy", "2"]}], "-", 
+         RowBox[{
+          SuperscriptBox["\[ExponentialE]", 
+           RowBox[{"\[ImaginaryI]", " ", "phiy"}]], " ", 
+          SuperscriptBox["retmy", "2"], " ", 
+          SuperscriptBox["ritmy", "2"]}], "-", 
+         RowBox[{
+          SuperscriptBox["\[ExponentialE]", 
+           RowBox[{"\[ImaginaryI]", " ", "PhiY"}]], " ", "retmy", " ", 
+          "ritmy", " ", 
+          SuperscriptBox["titmy", "2"]}]}]]}], "0", 
+      FractionBox[
+       RowBox[{
+        SuperscriptBox["\[ExponentialE]", 
+         RowBox[{"3", " ", "\[ImaginaryI]", " ", "phiy"}]], " ", 
+        RowBox[{"(", 
+         RowBox[{
+          SuperscriptBox["\[ExponentialE]", 
+           RowBox[{"2", " ", "\[ImaginaryI]", " ", "PhiY"}]], "-", 
+          SuperscriptBox["retmy", "2"]}], ")"}]}], 
+       RowBox[{
+        SuperscriptBox["\[ExponentialE]", 
+         RowBox[{
+          RowBox[{"3", " ", "\[ImaginaryI]", " ", "phiy"}], "+", 
+          RowBox[{"2", " ", "\[ImaginaryI]", " ", "PhiY"}]}]], "-", 
+        RowBox[{
+         SuperscriptBox["\[ExponentialE]", 
+          RowBox[{"3", " ", "\[ImaginaryI]", " ", "phiy"}]], " ", 
+         SuperscriptBox["retmy", "2"]}], "+", 
+        RowBox[{
+         SuperscriptBox["\[ExponentialE]", 
+          RowBox[{"\[ImaginaryI]", " ", 
+           RowBox[{"(", 
+            RowBox[{"phiy", "+", 
+             RowBox[{"2", " ", "PhiY"}]}], ")"}]}]], " ", 
+         SuperscriptBox["ritmy", "2"]}], "-", 
+        RowBox[{
+         SuperscriptBox["\[ExponentialE]", 
+          RowBox[{"\[ImaginaryI]", " ", "phiy"}]], " ", 
+         SuperscriptBox["retmy", "2"], " ", 
+         SuperscriptBox["ritmy", "2"]}], "-", 
+        RowBox[{
+         SuperscriptBox["\[ExponentialE]", 
+          RowBox[{"\[ImaginaryI]", " ", "PhiY"}]], " ", "retmy", " ", "ritmy",
+          " ", 
+         SuperscriptBox["titmy", "2"]}]}]], "0", "0", 
+      FractionBox[
+       RowBox[{
+        SuperscriptBox["\[ExponentialE]", 
+         RowBox[{"\[ImaginaryI]", " ", 
+          RowBox[{"(", 
+           RowBox[{"phiy", "+", "PhiY"}], ")"}]}]], " ", "retmy", " ", 
+        "ritmy", " ", "titmy"}], 
+       RowBox[{
+        SuperscriptBox["\[ExponentialE]", 
+         RowBox[{
+          RowBox[{"3", " ", "\[ImaginaryI]", " ", "phiy"}], "+", 
+          RowBox[{"2", " ", "\[ImaginaryI]", " ", "PhiY"}]}]], "-", 
+        RowBox[{
+         SuperscriptBox["\[ExponentialE]", 
+          RowBox[{"3", " ", "\[ImaginaryI]", " ", "phiy"}]], " ", 
+         SuperscriptBox["retmy", "2"]}], "+", 
+        RowBox[{
+         SuperscriptBox["\[ExponentialE]", 
+          RowBox[{"\[ImaginaryI]", " ", 
+           RowBox[{"(", 
+            RowBox[{"phiy", "+", 
+             RowBox[{"2", " ", "PhiY"}]}], ")"}]}]], " ", 
+         SuperscriptBox["ritmy", "2"]}], "-", 
+        RowBox[{
+         SuperscriptBox["\[ExponentialE]", 
+          RowBox[{"\[ImaginaryI]", " ", "phiy"}]], " ", 
+         SuperscriptBox["retmy", "2"], " ", 
+         SuperscriptBox["ritmy", "2"]}], "-", 
+        RowBox[{
+         SuperscriptBox["\[ExponentialE]", 
+          RowBox[{"\[ImaginaryI]", " ", "PhiY"}]], " ", "retmy", " ", "ritmy",
+          " ", 
+         SuperscriptBox["titmy", "2"]}]}]], 
+      RowBox[{"-", 
+       FractionBox[
+        RowBox[{
+         SuperscriptBox["\[ExponentialE]", 
+          RowBox[{"\[ImaginaryI]", " ", 
+           RowBox[{"(", 
+            RowBox[{"phiy", "+", 
+             RowBox[{"2", " ", "PhiY"}]}], ")"}]}]], " ", "ritmy", " ", 
+         "titmy"}], 
+        RowBox[{
+         SuperscriptBox["\[ExponentialE]", 
+          RowBox[{
+           RowBox[{"3", " ", "\[ImaginaryI]", " ", "phiy"}], "+", 
+           RowBox[{"2", " ", "\[ImaginaryI]", " ", "PhiY"}]}]], "-", 
+         RowBox[{
+          SuperscriptBox["\[ExponentialE]", 
+           RowBox[{"3", " ", "\[ImaginaryI]", " ", "phiy"}]], " ", 
+          SuperscriptBox["retmy", "2"]}], "+", 
+         RowBox[{
+          SuperscriptBox["\[ExponentialE]", 
+           RowBox[{"\[ImaginaryI]", " ", 
+            RowBox[{"(", 
+             RowBox[{"phiy", "+", 
+              RowBox[{"2", " ", "PhiY"}]}], ")"}]}]], " ", 
+          SuperscriptBox["ritmy", "2"]}], "-", 
+         RowBox[{
+          SuperscriptBox["\[ExponentialE]", 
+           RowBox[{"\[ImaginaryI]", " ", "phiy"}]], " ", 
+          SuperscriptBox["retmy", "2"], " ", 
+          SuperscriptBox["ritmy", "2"]}], "-", 
+         RowBox[{
+          SuperscriptBox["\[ExponentialE]", 
+           RowBox[{"\[ImaginaryI]", " ", "PhiY"}]], " ", "retmy", " ", 
+          "ritmy", " ", 
+          SuperscriptBox["titmy", "2"]}]}]]}], "0", 
+      RowBox[{"-", 
+       FractionBox[
+        RowBox[{
+         SuperscriptBox["\[ExponentialE]", 
+          RowBox[{"2", " ", "\[ImaginaryI]", " ", "phiy"}]], " ", 
+         RowBox[{"(", 
+          RowBox[{
+           SuperscriptBox["\[ExponentialE]", 
+            RowBox[{"2", " ", "\[ImaginaryI]", " ", "PhiY"}]], "-", 
+           SuperscriptBox["retmy", "2"]}], ")"}], " ", "ritmy"}], 
+        RowBox[{
+         SuperscriptBox["\[ExponentialE]", 
+          RowBox[{
+           RowBox[{"3", " ", "\[ImaginaryI]", " ", "phiy"}], "+", 
+           RowBox[{"2", " ", "\[ImaginaryI]", " ", "PhiY"}]}]], "-", 
+         RowBox[{
+          SuperscriptBox["\[ExponentialE]", 
+           RowBox[{"3", " ", "\[ImaginaryI]", " ", "phiy"}]], " ", 
+          SuperscriptBox["retmy", "2"]}], "+", 
+         RowBox[{
+          SuperscriptBox["\[ExponentialE]", 
+           RowBox[{"\[ImaginaryI]", " ", 
+            RowBox[{"(", 
+             RowBox[{"phiy", "+", 
+              RowBox[{"2", " ", "PhiY"}]}], ")"}]}]], " ", 
+          SuperscriptBox["ritmy", "2"]}], "-", 
+         RowBox[{
+          SuperscriptBox["\[ExponentialE]", 
+           RowBox[{"\[ImaginaryI]", " ", "phiy"}]], " ", 
+          SuperscriptBox["retmy", "2"], " ", 
+          SuperscriptBox["ritmy", "2"]}], "-", 
+         RowBox[{
+          SuperscriptBox["\[ExponentialE]", 
+           RowBox[{"\[ImaginaryI]", " ", "PhiY"}]], " ", "retmy", " ", 
+          "ritmy", " ", 
+          SuperscriptBox["titmy", "2"]}]}]]}], "0", "0"},
+     {
+      FractionBox[
+       RowBox[{
+        SuperscriptBox["\[ExponentialE]", 
+         RowBox[{"2", " ", "\[ImaginaryI]", " ", 
+          RowBox[{"(", 
+           RowBox[{"phix", "+", "PhiX"}], ")"}]}]], " ", "tbs", " ", 
+        "titmx"}], 
+       RowBox[{
+        SuperscriptBox["\[ExponentialE]", 
+         RowBox[{
+          RowBox[{"3", " ", "\[ImaginaryI]", " ", "phix"}], "+", 
+          RowBox[{"2", " ", "\[ImaginaryI]", " ", "PhiX"}]}]], "-", 
+        RowBox[{
+         SuperscriptBox["\[ExponentialE]", 
+          RowBox[{"3", " ", "\[ImaginaryI]", " ", "phix"}]], " ", 
+         SuperscriptBox["retmx", "2"]}], "+", 
+        RowBox[{
+         SuperscriptBox["\[ExponentialE]", 
+          RowBox[{"\[ImaginaryI]", " ", 
+           RowBox[{"(", 
+            RowBox[{"phix", "+", 
+             RowBox[{"2", " ", "PhiX"}]}], ")"}]}]], " ", 
+         SuperscriptBox["ritmx", "2"]}], "-", 
+        RowBox[{
+         SuperscriptBox["\[ExponentialE]", 
+          RowBox[{"\[ImaginaryI]", " ", "phix"}]], " ", 
+         SuperscriptBox["retmx", "2"], " ", 
+         SuperscriptBox["ritmx", "2"]}], "-", 
+        RowBox[{
+         SuperscriptBox["\[ExponentialE]", 
+          RowBox[{"\[ImaginaryI]", " ", "PhiX"}]], " ", "retmx", " ", "ritmx",
+          " ", 
+         SuperscriptBox["titmx", "2"]}]}]], 
+      FractionBox[
+       RowBox[{
+        SuperscriptBox["\[ExponentialE]", 
+         RowBox[{"2", " ", "\[ImaginaryI]", " ", 
+          RowBox[{"(", 
+           RowBox[{"phix", "+", "PhiX"}], ")"}]}]], " ", "titmx"}], 
+       RowBox[{
+        SuperscriptBox["\[ExponentialE]", 
+         RowBox[{
+          RowBox[{"3", " ", "\[ImaginaryI]", " ", "phix"}], "+", 
+          RowBox[{"2", " ", "\[ImaginaryI]", " ", "PhiX"}]}]], "-", 
+        RowBox[{
+         SuperscriptBox["\[ExponentialE]", 
+          RowBox[{"3", " ", "\[ImaginaryI]", " ", "phix"}]], " ", 
+         SuperscriptBox["retmx", "2"]}], "+", 
+        RowBox[{
+         SuperscriptBox["\[ExponentialE]", 
+          RowBox[{"\[ImaginaryI]", " ", 
+           RowBox[{"(", 
+            RowBox[{"phix", "+", 
+             RowBox[{"2", " ", "PhiX"}]}], ")"}]}]], " ", 
+         SuperscriptBox["ritmx", "2"]}], "-", 
+        RowBox[{
+         SuperscriptBox["\[ExponentialE]", 
+          RowBox[{"\[ImaginaryI]", " ", "phix"}]], " ", 
+         SuperscriptBox["retmx", "2"], " ", 
+         SuperscriptBox["ritmx", "2"]}], "-", 
+        RowBox[{
+         SuperscriptBox["\[ExponentialE]", 
+          RowBox[{"\[ImaginaryI]", " ", "PhiX"}]], " ", "retmx", " ", "ritmx",
+          " ", 
+         SuperscriptBox["titmx", "2"]}]}]], "0", 
+      FractionBox[
+       RowBox[{
+        SuperscriptBox["\[ExponentialE]", 
+         RowBox[{"\[ImaginaryI]", " ", 
+          RowBox[{"(", 
+           RowBox[{"phix", "+", 
+            RowBox[{"2", " ", "PhiX"}]}], ")"}]}]], " ", 
+        RowBox[{"(", 
+         RowBox[{
+          SuperscriptBox["\[ExponentialE]", 
+           RowBox[{"2", " ", "\[ImaginaryI]", " ", "phix"}]], "+", 
+          SuperscriptBox["ritmx", "2"]}], ")"}]}], 
+       RowBox[{
+        SuperscriptBox["\[ExponentialE]", 
+         RowBox[{
+          RowBox[{"3", " ", "\[ImaginaryI]", " ", "phix"}], "+", 
+          RowBox[{"2", " ", "\[ImaginaryI]", " ", "PhiX"}]}]], "-", 
+        RowBox[{
+         SuperscriptBox["\[ExponentialE]", 
+          RowBox[{"3", " ", "\[ImaginaryI]", " ", "phix"}]], " ", 
+         SuperscriptBox["retmx", "2"]}], "+", 
+        RowBox[{
+         SuperscriptBox["\[ExponentialE]", 
+          RowBox[{"\[ImaginaryI]", " ", 
+           RowBox[{"(", 
+            RowBox[{"phix", "+", 
+             RowBox[{"2", " ", "PhiX"}]}], ")"}]}]], " ", 
+         SuperscriptBox["ritmx", "2"]}], "-", 
+        RowBox[{
+         SuperscriptBox["\[ExponentialE]", 
+          RowBox[{"\[ImaginaryI]", " ", "phix"}]], " ", 
+         SuperscriptBox["retmx", "2"], " ", 
+         SuperscriptBox["ritmx", "2"]}], "-", 
+        RowBox[{
+         SuperscriptBox["\[ExponentialE]", 
+          RowBox[{"\[ImaginaryI]", " ", "PhiX"}]], " ", "retmx", " ", "ritmx",
+          " ", 
+         SuperscriptBox["titmx", "2"]}]}]], 
+      RowBox[{"-", 
+       FractionBox[
+        RowBox[{
+         SuperscriptBox["\[ExponentialE]", 
+          RowBox[{"\[ImaginaryI]", " ", "PhiX"}]], " ", 
+         RowBox[{"(", 
+          RowBox[{
+           RowBox[{
+            SuperscriptBox["\[ExponentialE]", 
+             RowBox[{"3", " ", "\[ImaginaryI]", " ", "phix"}]], " ", 
+            "retmx"}], "+", 
+           RowBox[{
+            SuperscriptBox["\[ExponentialE]", 
+             RowBox[{"\[ImaginaryI]", " ", "phix"}]], " ", "retmx", " ", 
+            SuperscriptBox["ritmx", "2"]}], "+", 
+           RowBox[{
+            SuperscriptBox["\[ExponentialE]", 
+             RowBox[{"\[ImaginaryI]", " ", "PhiX"}]], " ", "ritmx", " ", 
+            SuperscriptBox["titmx", "2"]}]}], ")"}]}], 
+        RowBox[{
+         SuperscriptBox["\[ExponentialE]", 
+          RowBox[{
+           RowBox[{"3", " ", "\[ImaginaryI]", " ", "phix"}], "+", 
+           RowBox[{"2", " ", "\[ImaginaryI]", " ", "PhiX"}]}]], "-", 
+         RowBox[{
+          SuperscriptBox["\[ExponentialE]", 
+           RowBox[{"3", " ", "\[ImaginaryI]", " ", "phix"}]], " ", 
+          SuperscriptBox["retmx", "2"]}], "+", 
+         RowBox[{
+          SuperscriptBox["\[ExponentialE]", 
+           RowBox[{"\[ImaginaryI]", " ", 
+            RowBox[{"(", 
+             RowBox[{"phix", "+", 
+              RowBox[{"2", " ", "PhiX"}]}], ")"}]}]], " ", 
+          SuperscriptBox["ritmx", "2"]}], "-", 
+         RowBox[{
+          SuperscriptBox["\[ExponentialE]", 
+           RowBox[{"\[ImaginaryI]", " ", "phix"}]], " ", 
+          SuperscriptBox["retmx", "2"], " ", 
+          SuperscriptBox["ritmx", "2"]}], "-", 
+         RowBox[{
+          SuperscriptBox["\[ExponentialE]", 
+           RowBox[{"\[ImaginaryI]", " ", "PhiX"}]], " ", "retmx", " ", 
+          "ritmx", " ", 
+          SuperscriptBox["titmx", "2"]}]}]]}], "0", "0", 
+      RowBox[{"-", 
+       FractionBox[
+        RowBox[{
+         SuperscriptBox["\[ExponentialE]", 
+          RowBox[{"\[ImaginaryI]", " ", 
+           RowBox[{"(", 
+            RowBox[{"phix", "+", 
+             RowBox[{"2", " ", "PhiX"}]}], ")"}]}]], " ", "ritmx", " ", 
+         "titmx"}], 
+        RowBox[{
+         SuperscriptBox["\[ExponentialE]", 
+          RowBox[{
+           RowBox[{"3", " ", "\[ImaginaryI]", " ", "phix"}], "+", 
+           RowBox[{"2", " ", "\[ImaginaryI]", " ", "PhiX"}]}]], "-", 
+         RowBox[{
+          SuperscriptBox["\[ExponentialE]", 
+           RowBox[{"3", " ", "\[ImaginaryI]", " ", "phix"}]], " ", 
+          SuperscriptBox["retmx", "2"]}], "+", 
+         RowBox[{
+          SuperscriptBox["\[ExponentialE]", 
+           RowBox[{"\[ImaginaryI]", " ", 
+            RowBox[{"(", 
+             RowBox[{"phix", "+", 
+              RowBox[{"2", " ", "PhiX"}]}], ")"}]}]], " ", 
+          SuperscriptBox["ritmx", "2"]}], "-", 
+         RowBox[{
+          SuperscriptBox["\[ExponentialE]", 
+           RowBox[{"\[ImaginaryI]", " ", "phix"}]], " ", 
+          SuperscriptBox["retmx", "2"], " ", 
+          SuperscriptBox["ritmx", "2"]}], "-", 
+         RowBox[{
+          SuperscriptBox["\[ExponentialE]", 
+           RowBox[{"\[ImaginaryI]", " ", "PhiX"}]], " ", "retmx", " ", 
+          "ritmx", " ", 
+          SuperscriptBox["titmx", "2"]}]}]]}], "0", "0", "0"},
+     {
+      RowBox[{"-", 
+       FractionBox[
+        RowBox[{
+         SuperscriptBox["\[ExponentialE]", 
+          RowBox[{"\[ImaginaryI]", " ", 
+           RowBox[{"(", 
+            RowBox[{
+             RowBox[{"2", " ", "phix"}], "+", "PhiX"}], ")"}]}]], " ", 
+         "retmx", " ", "tbs", " ", "titmx"}], 
+        RowBox[{
+         SuperscriptBox["\[ExponentialE]", 
+          RowBox[{
+           RowBox[{"3", " ", "\[ImaginaryI]", " ", "phix"}], "+", 
+           RowBox[{"2", " ", "\[ImaginaryI]", " ", "PhiX"}]}]], "-", 
+         RowBox[{
+          SuperscriptBox["\[ExponentialE]", 
+           RowBox[{"3", " ", "\[ImaginaryI]", " ", "phix"}]], " ", 
+          SuperscriptBox["retmx", "2"]}], "+", 
+         RowBox[{
+          SuperscriptBox["\[ExponentialE]", 
+           RowBox[{"\[ImaginaryI]", " ", 
+            RowBox[{"(", 
+             RowBox[{"phix", "+", 
+              RowBox[{"2", " ", "PhiX"}]}], ")"}]}]], " ", 
+          SuperscriptBox["ritmx", "2"]}], "-", 
+         RowBox[{
+          SuperscriptBox["\[ExponentialE]", 
+           RowBox[{"\[ImaginaryI]", " ", "phix"}]], " ", 
+          SuperscriptBox["retmx", "2"], " ", 
+          SuperscriptBox["ritmx", "2"]}], "-", 
+         RowBox[{
+          SuperscriptBox["\[ExponentialE]", 
+           RowBox[{"\[ImaginaryI]", " ", "PhiX"}]], " ", "retmx", " ", 
+          "ritmx", " ", 
+          SuperscriptBox["titmx", "2"]}]}]]}], 
+      RowBox[{"-", 
+       FractionBox[
+        RowBox[{
+         SuperscriptBox["\[ExponentialE]", 
+          RowBox[{"\[ImaginaryI]", " ", 
+           RowBox[{"(", 
+            RowBox[{
+             RowBox[{"2", " ", "phix"}], "+", "PhiX"}], ")"}]}]], " ", 
+         "retmx", " ", "titmx"}], 
+        RowBox[{
+         SuperscriptBox["\[ExponentialE]", 
+          RowBox[{
+           RowBox[{"3", " ", "\[ImaginaryI]", " ", "phix"}], "+", 
+           RowBox[{"2", " ", "\[ImaginaryI]", " ", "PhiX"}]}]], "-", 
+         RowBox[{
+          SuperscriptBox["\[ExponentialE]", 
+           RowBox[{"3", " ", "\[ImaginaryI]", " ", "phix"}]], " ", 
+          SuperscriptBox["retmx", "2"]}], "+", 
+         RowBox[{
+          SuperscriptBox["\[ExponentialE]", 
+           RowBox[{"\[ImaginaryI]", " ", 
+            RowBox[{"(", 
+             RowBox[{"phix", "+", 
+              RowBox[{"2", " ", "PhiX"}]}], ")"}]}]], " ", 
+          SuperscriptBox["ritmx", "2"]}], "-", 
+         RowBox[{
+          SuperscriptBox["\[ExponentialE]", 
+           RowBox[{"\[ImaginaryI]", " ", "phix"}]], " ", 
+          SuperscriptBox["retmx", "2"], " ", 
+          SuperscriptBox["ritmx", "2"]}], "-", 
+         RowBox[{
+          SuperscriptBox["\[ExponentialE]", 
+           RowBox[{"\[ImaginaryI]", " ", "PhiX"}]], " ", "retmx", " ", 
+          "ritmx", " ", 
+          SuperscriptBox["titmx", "2"]}]}]]}], "0", 
+      RowBox[{"-", 
+       FractionBox[
+        RowBox[{
+         SuperscriptBox["\[ExponentialE]", 
+          RowBox[{"\[ImaginaryI]", " ", 
+           RowBox[{"(", 
+            RowBox[{"phix", "+", "PhiX"}], ")"}]}]], " ", "retmx", " ", 
+         RowBox[{"(", 
+          RowBox[{
+           SuperscriptBox["\[ExponentialE]", 
+            RowBox[{"2", " ", "\[ImaginaryI]", " ", "phix"}]], "+", 
+           SuperscriptBox["ritmx", "2"]}], ")"}]}], 
+        RowBox[{
+         SuperscriptBox["\[ExponentialE]", 
+          RowBox[{
+           RowBox[{"3", " ", "\[ImaginaryI]", " ", "phix"}], "+", 
+           RowBox[{"2", " ", "\[ImaginaryI]", " ", "PhiX"}]}]], "-", 
+         RowBox[{
+          SuperscriptBox["\[ExponentialE]", 
+           RowBox[{"3", " ", "\[ImaginaryI]", " ", "phix"}]], " ", 
+          SuperscriptBox["retmx", "2"]}], "+", 
+         RowBox[{
+          SuperscriptBox["\[ExponentialE]", 
+           RowBox[{"\[ImaginaryI]", " ", 
+            RowBox[{"(", 
+             RowBox[{"phix", "+", 
+              RowBox[{"2", " ", "PhiX"}]}], ")"}]}]], " ", 
+          SuperscriptBox["ritmx", "2"]}], "-", 
+         RowBox[{
+          SuperscriptBox["\[ExponentialE]", 
+           RowBox[{"\[ImaginaryI]", " ", "phix"}]], " ", 
+          SuperscriptBox["retmx", "2"], " ", 
+          SuperscriptBox["ritmx", "2"]}], "-", 
+         RowBox[{
+          SuperscriptBox["\[ExponentialE]", 
+           RowBox[{"\[ImaginaryI]", " ", "PhiX"}]], " ", "retmx", " ", 
+          "ritmx", " ", 
+          SuperscriptBox["titmx", "2"]}]}]]}], 
+      FractionBox[
+       RowBox[{
+        SuperscriptBox["\[ExponentialE]", 
+         RowBox[{"\[ImaginaryI]", " ", 
+          RowBox[{"(", 
+           RowBox[{"phix", "+", 
+            RowBox[{"2", " ", "PhiX"}]}], ")"}]}]], " ", 
+        RowBox[{"(", 
+         RowBox[{
+          SuperscriptBox["\[ExponentialE]", 
+           RowBox[{"2", " ", "\[ImaginaryI]", " ", "phix"}]], "+", 
+          SuperscriptBox["ritmx", "2"]}], ")"}]}], 
+       RowBox[{
+        SuperscriptBox["\[ExponentialE]", 
+         RowBox[{
+          RowBox[{"3", " ", "\[ImaginaryI]", " ", "phix"}], "+", 
+          RowBox[{"2", " ", "\[ImaginaryI]", " ", "PhiX"}]}]], "-", 
+        RowBox[{
+         SuperscriptBox["\[ExponentialE]", 
+          RowBox[{"3", " ", "\[ImaginaryI]", " ", "phix"}]], " ", 
+         SuperscriptBox["retmx", "2"]}], "+", 
+        RowBox[{
+         SuperscriptBox["\[ExponentialE]", 
+          RowBox[{"\[ImaginaryI]", " ", 
+           RowBox[{"(", 
+            RowBox[{"phix", "+", 
+             RowBox[{"2", " ", "PhiX"}]}], ")"}]}]], " ", 
+         SuperscriptBox["ritmx", "2"]}], "-", 
+        RowBox[{
+         SuperscriptBox["\[ExponentialE]", 
+          RowBox[{"\[ImaginaryI]", " ", "phix"}]], " ", 
+         SuperscriptBox["retmx", "2"], " ", 
+         SuperscriptBox["ritmx", "2"]}], "-", 
+        RowBox[{
+         SuperscriptBox["\[ExponentialE]", 
+          RowBox[{"\[ImaginaryI]", " ", "PhiX"}]], " ", "retmx", " ", "ritmx",
+          " ", 
+         SuperscriptBox["titmx", "2"]}]}]], "0", "0", 
+      FractionBox[
+       RowBox[{
+        SuperscriptBox["\[ExponentialE]", 
+         RowBox[{"\[ImaginaryI]", " ", 
+          RowBox[{"(", 
+           RowBox[{"phix", "+", "PhiX"}], ")"}]}]], " ", "retmx", " ", 
+        "ritmx", " ", "titmx"}], 
+       RowBox[{
+        SuperscriptBox["\[ExponentialE]", 
+         RowBox[{
+          RowBox[{"3", " ", "\[ImaginaryI]", " ", "phix"}], "+", 
+          RowBox[{"2", " ", "\[ImaginaryI]", " ", "PhiX"}]}]], "-", 
+        RowBox[{
+         SuperscriptBox["\[ExponentialE]", 
+          RowBox[{"3", " ", "\[ImaginaryI]", " ", "phix"}]], " ", 
+         SuperscriptBox["retmx", "2"]}], "+", 
+        RowBox[{
+         SuperscriptBox["\[ExponentialE]", 
+          RowBox[{"\[ImaginaryI]", " ", 
+           RowBox[{"(", 
+            RowBox[{"phix", "+", 
+             RowBox[{"2", " ", "PhiX"}]}], ")"}]}]], " ", 
+         SuperscriptBox["ritmx", "2"]}], "-", 
+        RowBox[{
+         SuperscriptBox["\[ExponentialE]", 
+          RowBox[{"\[ImaginaryI]", " ", "phix"}]], " ", 
+         SuperscriptBox["retmx", "2"], " ", 
+         SuperscriptBox["ritmx", "2"]}], "-", 
+        RowBox[{
+         SuperscriptBox["\[ExponentialE]", 
+          RowBox[{"\[ImaginaryI]", " ", "PhiX"}]], " ", "retmx", " ", "ritmx",
+          " ", 
+         SuperscriptBox["titmx", "2"]}]}]], "0", "0", "0"},
+     {
+      RowBox[{"-", 
+       FractionBox[
+        RowBox[{
+         SuperscriptBox["\[ExponentialE]", 
+          RowBox[{"2", " ", "\[ImaginaryI]", " ", 
+           RowBox[{"(", 
+            RowBox[{"phiy", "+", "PhiY"}], ")"}]}]], " ", "rbs", " ", 
+         "titmy"}], 
+        RowBox[{
+         SuperscriptBox["\[ExponentialE]", 
+          RowBox[{
+           RowBox[{"3", " ", "\[ImaginaryI]", " ", "phiy"}], "+", 
+           RowBox[{"2", " ", "\[ImaginaryI]", " ", "PhiY"}]}]], "-", 
+         RowBox[{
+          SuperscriptBox["\[ExponentialE]", 
+           RowBox[{"3", " ", "\[ImaginaryI]", " ", "phiy"}]], " ", 
+          SuperscriptBox["retmy", "2"]}], "+", 
+         RowBox[{
+          SuperscriptBox["\[ExponentialE]", 
+           RowBox[{"\[ImaginaryI]", " ", 
+            RowBox[{"(", 
+             RowBox[{"phiy", "+", 
+              RowBox[{"2", " ", "PhiY"}]}], ")"}]}]], " ", 
+          SuperscriptBox["ritmy", "2"]}], "-", 
+         RowBox[{
+          SuperscriptBox["\[ExponentialE]", 
+           RowBox[{"\[ImaginaryI]", " ", "phiy"}]], " ", 
+          SuperscriptBox["retmy", "2"], " ", 
+          SuperscriptBox["ritmy", "2"]}], "-", 
+         RowBox[{
+          SuperscriptBox["\[ExponentialE]", 
+           RowBox[{"\[ImaginaryI]", " ", "PhiY"}]], " ", "retmy", " ", 
+          "ritmy", " ", 
+          SuperscriptBox["titmy", "2"]}]}]]}], "0", 
+      FractionBox[
+       RowBox[{
+        SuperscriptBox["\[ExponentialE]", 
+         RowBox[{"2", " ", "\[ImaginaryI]", " ", 
+          RowBox[{"(", 
+           RowBox[{"phiy", "+", "PhiY"}], ")"}]}]], " ", "titmy"}], 
+       RowBox[{
+        SuperscriptBox["\[ExponentialE]", 
+         RowBox[{
+          RowBox[{"3", " ", "\[ImaginaryI]", " ", "phiy"}], "+", 
+          RowBox[{"2", " ", "\[ImaginaryI]", " ", "PhiY"}]}]], "-", 
+        RowBox[{
+         SuperscriptBox["\[ExponentialE]", 
+          RowBox[{"3", " ", "\[ImaginaryI]", " ", "phiy"}]], " ", 
+         SuperscriptBox["retmy", "2"]}], "+", 
+        RowBox[{
+         SuperscriptBox["\[ExponentialE]", 
+          RowBox[{"\[ImaginaryI]", " ", 
+           RowBox[{"(", 
+            RowBox[{"phiy", "+", 
+             RowBox[{"2", " ", "PhiY"}]}], ")"}]}]], " ", 
+         SuperscriptBox["ritmy", "2"]}], "-", 
+        RowBox[{
+         SuperscriptBox["\[ExponentialE]", 
+          RowBox[{"\[ImaginaryI]", " ", "phiy"}]], " ", 
+         SuperscriptBox["retmy", "2"], " ", 
+         SuperscriptBox["ritmy", "2"]}], "-", 
+        RowBox[{
+         SuperscriptBox["\[ExponentialE]", 
+          RowBox[{"\[ImaginaryI]", " ", "PhiY"}]], " ", "retmy", " ", "ritmy",
+          " ", 
+         SuperscriptBox["titmy", "2"]}]}]], "0", "0", 
+      FractionBox[
+       RowBox[{
+        SuperscriptBox["\[ExponentialE]", 
+         RowBox[{"\[ImaginaryI]", " ", 
+          RowBox[{"(", 
+           RowBox[{"phiy", "+", 
+            RowBox[{"2", " ", "PhiY"}]}], ")"}]}]], " ", 
+        RowBox[{"(", 
+         RowBox[{
+          SuperscriptBox["\[ExponentialE]", 
+           RowBox[{"2", " ", "\[ImaginaryI]", " ", "phiy"}]], "+", 
+          SuperscriptBox["ritmy", "2"]}], ")"}]}], 
+       RowBox[{
+        SuperscriptBox["\[ExponentialE]", 
+         RowBox[{
+          RowBox[{"3", " ", "\[ImaginaryI]", " ", "phiy"}], "+", 
+          RowBox[{"2", " ", "\[ImaginaryI]", " ", "PhiY"}]}]], "-", 
+        RowBox[{
+         SuperscriptBox["\[ExponentialE]", 
+          RowBox[{"3", " ", "\[ImaginaryI]", " ", "phiy"}]], " ", 
+         SuperscriptBox["retmy", "2"]}], "+", 
+        RowBox[{
+         SuperscriptBox["\[ExponentialE]", 
+          RowBox[{"\[ImaginaryI]", " ", 
+           RowBox[{"(", 
+            RowBox[{"phiy", "+", 
+             RowBox[{"2", " ", "PhiY"}]}], ")"}]}]], " ", 
+         SuperscriptBox["ritmy", "2"]}], "-", 
+        RowBox[{
+         SuperscriptBox["\[ExponentialE]", 
+          RowBox[{"\[ImaginaryI]", " ", "phiy"}]], " ", 
+         SuperscriptBox["retmy", "2"], " ", 
+         SuperscriptBox["ritmy", "2"]}], "-", 
+        RowBox[{
+         SuperscriptBox["\[ExponentialE]", 
+          RowBox[{"\[ImaginaryI]", " ", "PhiY"}]], " ", "retmy", " ", "ritmy",
+          " ", 
+         SuperscriptBox["titmy", "2"]}]}]], 
+      RowBox[{"-", 
+       FractionBox[
+        RowBox[{
+         SuperscriptBox["\[ExponentialE]", 
+          RowBox[{"\[ImaginaryI]", " ", "PhiY"}]], " ", 
+         RowBox[{"(", 
+          RowBox[{
+           RowBox[{
+            SuperscriptBox["\[ExponentialE]", 
+             RowBox[{"3", " ", "\[ImaginaryI]", " ", "phiy"}]], " ", 
+            "retmy"}], "+", 
+           RowBox[{
+            SuperscriptBox["\[ExponentialE]", 
+             RowBox[{"\[ImaginaryI]", " ", "phiy"}]], " ", "retmy", " ", 
+            SuperscriptBox["ritmy", "2"]}], "+", 
+           RowBox[{
+            SuperscriptBox["\[ExponentialE]", 
+             RowBox[{"\[ImaginaryI]", " ", "PhiY"}]], " ", "ritmy", " ", 
+            SuperscriptBox["titmy", "2"]}]}], ")"}]}], 
+        RowBox[{
+         SuperscriptBox["\[ExponentialE]", 
+          RowBox[{
+           RowBox[{"3", " ", "\[ImaginaryI]", " ", "phiy"}], "+", 
+           RowBox[{"2", " ", "\[ImaginaryI]", " ", "PhiY"}]}]], "-", 
+         RowBox[{
+          SuperscriptBox["\[ExponentialE]", 
+           RowBox[{"3", " ", "\[ImaginaryI]", " ", "phiy"}]], " ", 
+          SuperscriptBox["retmy", "2"]}], "+", 
+         RowBox[{
+          SuperscriptBox["\[ExponentialE]", 
+           RowBox[{"\[ImaginaryI]", " ", 
+            RowBox[{"(", 
+             RowBox[{"phiy", "+", 
+              RowBox[{"2", " ", "PhiY"}]}], ")"}]}]], " ", 
+          SuperscriptBox["ritmy", "2"]}], "-", 
+         RowBox[{
+          SuperscriptBox["\[ExponentialE]", 
+           RowBox[{"\[ImaginaryI]", " ", "phiy"}]], " ", 
+          SuperscriptBox["retmy", "2"], " ", 
+          SuperscriptBox["ritmy", "2"]}], "-", 
+         RowBox[{
+          SuperscriptBox["\[ExponentialE]", 
+           RowBox[{"\[ImaginaryI]", " ", "PhiY"}]], " ", "retmy", " ", 
+          "ritmy", " ", 
+          SuperscriptBox["titmy", "2"]}]}]]}], "0", 
+      RowBox[{"-", 
+       FractionBox[
+        RowBox[{
+         SuperscriptBox["\[ExponentialE]", 
+          RowBox[{"\[ImaginaryI]", " ", 
+           RowBox[{"(", 
+            RowBox[{"phiy", "+", 
+             RowBox[{"2", " ", "PhiY"}]}], ")"}]}]], " ", "ritmy", " ", 
+         "titmy"}], 
+        RowBox[{
+         SuperscriptBox["\[ExponentialE]", 
+          RowBox[{
+           RowBox[{"3", " ", "\[ImaginaryI]", " ", "phiy"}], "+", 
+           RowBox[{"2", " ", "\[ImaginaryI]", " ", "PhiY"}]}]], "-", 
+         RowBox[{
+          SuperscriptBox["\[ExponentialE]", 
+           RowBox[{"3", " ", "\[ImaginaryI]", " ", "phiy"}]], " ", 
+          SuperscriptBox["retmy", "2"]}], "+", 
+         RowBox[{
+          SuperscriptBox["\[ExponentialE]", 
+           RowBox[{"\[ImaginaryI]", " ", 
+            RowBox[{"(", 
+             RowBox[{"phiy", "+", 
+              RowBox[{"2", " ", "PhiY"}]}], ")"}]}]], " ", 
+          SuperscriptBox["ritmy", "2"]}], "-", 
+         RowBox[{
+          SuperscriptBox["\[ExponentialE]", 
+           RowBox[{"\[ImaginaryI]", " ", "phiy"}]], " ", 
+          SuperscriptBox["retmy", "2"], " ", 
+          SuperscriptBox["ritmy", "2"]}], "-", 
+         RowBox[{
+          SuperscriptBox["\[ExponentialE]", 
+           RowBox[{"\[ImaginaryI]", " ", "PhiY"}]], " ", "retmy", " ", 
+          "ritmy", " ", 
+          SuperscriptBox["titmy", "2"]}]}]]}], "0", "0"},
+     {
+      FractionBox[
+       RowBox[{
+        SuperscriptBox["\[ExponentialE]", 
+         RowBox[{"\[ImaginaryI]", " ", 
+          RowBox[{"(", 
+           RowBox[{
+            RowBox[{"2", " ", "phiy"}], "+", "PhiY"}], ")"}]}]], " ", "rbs", " ",
+         "retmy", " ", "titmy"}], 
+       RowBox[{
+        SuperscriptBox["\[ExponentialE]", 
+         RowBox[{
+          RowBox[{"3", " ", "\[ImaginaryI]", " ", "phiy"}], "+", 
+          RowBox[{"2", " ", "\[ImaginaryI]", " ", "PhiY"}]}]], "-", 
+        RowBox[{
+         SuperscriptBox["\[ExponentialE]", 
+          RowBox[{"3", " ", "\[ImaginaryI]", " ", "phiy"}]], " ", 
+         SuperscriptBox["retmy", "2"]}], "+", 
+        RowBox[{
+         SuperscriptBox["\[ExponentialE]", 
+          RowBox[{"\[ImaginaryI]", " ", 
+           RowBox[{"(", 
+            RowBox[{"phiy", "+", 
+             RowBox[{"2", " ", "PhiY"}]}], ")"}]}]], " ", 
+         SuperscriptBox["ritmy", "2"]}], "-", 
+        RowBox[{
+         SuperscriptBox["\[ExponentialE]", 
+          RowBox[{"\[ImaginaryI]", " ", "phiy"}]], " ", 
+         SuperscriptBox["retmy", "2"], " ", 
+         SuperscriptBox["ritmy", "2"]}], "-", 
+        RowBox[{
+         SuperscriptBox["\[ExponentialE]", 
+          RowBox[{"\[ImaginaryI]", " ", "PhiY"}]], " ", "retmy", " ", "ritmy",
+          " ", 
+         SuperscriptBox["titmy", "2"]}]}]], "0", 
+      RowBox[{"-", 
+       FractionBox[
+        RowBox[{
+         SuperscriptBox["\[ExponentialE]", 
+          RowBox[{"\[ImaginaryI]", " ", 
+           RowBox[{"(", 
+            RowBox[{
+             RowBox[{"2", " ", "phiy"}], "+", "PhiY"}], ")"}]}]], " ", 
+         "retmy", " ", "titmy"}], 
+        RowBox[{
+         SuperscriptBox["\[ExponentialE]", 
+          RowBox[{
+           RowBox[{"3", " ", "\[ImaginaryI]", " ", "phiy"}], "+", 
+           RowBox[{"2", " ", "\[ImaginaryI]", " ", "PhiY"}]}]], "-", 
+         RowBox[{
+          SuperscriptBox["\[ExponentialE]", 
+           RowBox[{"3", " ", "\[ImaginaryI]", " ", "phiy"}]], " ", 
+          SuperscriptBox["retmy", "2"]}], "+", 
+         RowBox[{
+          SuperscriptBox["\[ExponentialE]", 
+           RowBox[{"\[ImaginaryI]", " ", 
+            RowBox[{"(", 
+             RowBox[{"phiy", "+", 
+              RowBox[{"2", " ", "PhiY"}]}], ")"}]}]], " ", 
+          SuperscriptBox["ritmy", "2"]}], "-", 
+         RowBox[{
+          SuperscriptBox["\[ExponentialE]", 
+           RowBox[{"\[ImaginaryI]", " ", "phiy"}]], " ", 
+          SuperscriptBox["retmy", "2"], " ", 
+          SuperscriptBox["ritmy", "2"]}], "-", 
+         RowBox[{
+          SuperscriptBox["\[ExponentialE]", 
+           RowBox[{"\[ImaginaryI]", " ", "PhiY"}]], " ", "retmy", " ", 
+          "ritmy", " ", 
+          SuperscriptBox["titmy", "2"]}]}]]}], "0", "0", 
+      RowBox[{"-", 
+       FractionBox[
+        RowBox[{
+         SuperscriptBox["\[ExponentialE]", 
+          RowBox[{"\[ImaginaryI]", " ", 
+           RowBox[{"(", 
+            RowBox[{"phiy", "+", "PhiY"}], ")"}]}]], " ", "retmy", " ", 
+         RowBox[{"(", 
+          RowBox[{
+           SuperscriptBox["\[ExponentialE]", 
+            RowBox[{"2", " ", "\[ImaginaryI]", " ", "phiy"}]], "+", 
+           SuperscriptBox["ritmy", "2"]}], ")"}]}], 
+        RowBox[{
+         SuperscriptBox["\[ExponentialE]", 
+          RowBox[{
+           RowBox[{"3", " ", "\[ImaginaryI]", " ", "phiy"}], "+", 
+           RowBox[{"2", " ", "\[ImaginaryI]", " ", "PhiY"}]}]], "-", 
+         RowBox[{
+          SuperscriptBox["\[ExponentialE]", 
+           RowBox[{"3", " ", "\[ImaginaryI]", " ", "phiy"}]], " ", 
+          SuperscriptBox["retmy", "2"]}], "+", 
+         RowBox[{
+          SuperscriptBox["\[ExponentialE]", 
+           RowBox[{"\[ImaginaryI]", " ", 
+            RowBox[{"(", 
+             RowBox[{"phiy", "+", 
+              RowBox[{"2", " ", "PhiY"}]}], ")"}]}]], " ", 
+          SuperscriptBox["ritmy", "2"]}], "-", 
+         RowBox[{
+          SuperscriptBox["\[ExponentialE]", 
+           RowBox[{"\[ImaginaryI]", " ", "phiy"}]], " ", 
+          SuperscriptBox["retmy", "2"], " ", 
+          SuperscriptBox["ritmy", "2"]}], "-", 
+         RowBox[{
+          SuperscriptBox["\[ExponentialE]", 
+           RowBox[{"\[ImaginaryI]", " ", "PhiY"}]], " ", "retmy", " ", 
+          "ritmy", " ", 
+          SuperscriptBox["titmy", "2"]}]}]]}], 
+      FractionBox[
+       RowBox[{
+        SuperscriptBox["\[ExponentialE]", 
+         RowBox[{"\[ImaginaryI]", " ", 
+          RowBox[{"(", 
+           RowBox[{"phiy", "+", 
+            RowBox[{"2", " ", "PhiY"}]}], ")"}]}]], " ", 
+        RowBox[{"(", 
+         RowBox[{
+          SuperscriptBox["\[ExponentialE]", 
+           RowBox[{"2", " ", "\[ImaginaryI]", " ", "phiy"}]], "+", 
+          SuperscriptBox["ritmy", "2"]}], ")"}]}], 
+       RowBox[{
+        SuperscriptBox["\[ExponentialE]", 
+         RowBox[{
+          RowBox[{"3", " ", "\[ImaginaryI]", " ", "phiy"}], "+", 
+          RowBox[{"2", " ", "\[ImaginaryI]", " ", "PhiY"}]}]], "-", 
+        RowBox[{
+         SuperscriptBox["\[ExponentialE]", 
+          RowBox[{"3", " ", "\[ImaginaryI]", " ", "phiy"}]], " ", 
+         SuperscriptBox["retmy", "2"]}], "+", 
+        RowBox[{
+         SuperscriptBox["\[ExponentialE]", 
+          RowBox[{"\[ImaginaryI]", " ", 
+           RowBox[{"(", 
+            RowBox[{"phiy", "+", 
+             RowBox[{"2", " ", "PhiY"}]}], ")"}]}]], " ", 
+         SuperscriptBox["ritmy", "2"]}], "-", 
+        RowBox[{
+         SuperscriptBox["\[ExponentialE]", 
+          RowBox[{"\[ImaginaryI]", " ", "phiy"}]], " ", 
+         SuperscriptBox["retmy", "2"], " ", 
+         SuperscriptBox["ritmy", "2"]}], "-", 
+        RowBox[{
+         SuperscriptBox["\[ExponentialE]", 
+          RowBox[{"\[ImaginaryI]", " ", "PhiY"}]], " ", "retmy", " ", "ritmy",
+          " ", 
+         SuperscriptBox["titmy", "2"]}]}]], "0", 
+      FractionBox[
+       RowBox[{
+        SuperscriptBox["\[ExponentialE]", 
+         RowBox[{"\[ImaginaryI]", " ", 
+          RowBox[{"(", 
+           RowBox[{"phiy", "+", "PhiY"}], ")"}]}]], " ", "retmy", " ", 
+        "ritmy", " ", "titmy"}], 
+       RowBox[{
+        SuperscriptBox["\[ExponentialE]", 
+         RowBox[{
+          RowBox[{"3", " ", "\[ImaginaryI]", " ", "phiy"}], "+", 
+          RowBox[{"2", " ", "\[ImaginaryI]", " ", "PhiY"}]}]], "-", 
+        RowBox[{
+         SuperscriptBox["\[ExponentialE]", 
+          RowBox[{"3", " ", "\[ImaginaryI]", " ", "phiy"}]], " ", 
+         SuperscriptBox["retmy", "2"]}], "+", 
+        RowBox[{
+         SuperscriptBox["\[ExponentialE]", 
+          RowBox[{"\[ImaginaryI]", " ", 
+           RowBox[{"(", 
+            RowBox[{"phiy", "+", 
+             RowBox[{"2", " ", "PhiY"}]}], ")"}]}]], " ", 
+         SuperscriptBox["ritmy", "2"]}], "-", 
+        RowBox[{
+         SuperscriptBox["\[ExponentialE]", 
+          RowBox[{"\[ImaginaryI]", " ", "phiy"}]], " ", 
+         SuperscriptBox["retmy", "2"], " ", 
+         SuperscriptBox["ritmy", "2"]}], "-", 
+        RowBox[{
+         SuperscriptBox["\[ExponentialE]", 
+          RowBox[{"\[ImaginaryI]", " ", "PhiY"}]], " ", "retmy", " ", "ritmy",
+          " ", 
+         SuperscriptBox["titmy", "2"]}]}]], "0", "0"},
+     {
+      FractionBox[
+       RowBox[{
+        SuperscriptBox["\[ExponentialE]", 
+         RowBox[{"\[ImaginaryI]", " ", "phix"}]], " ", "tbs", " ", 
+        RowBox[{"(", 
+         RowBox[{
+          RowBox[{
+           SuperscriptBox["\[ExponentialE]", 
+            RowBox[{"\[ImaginaryI]", " ", 
+             RowBox[{"(", 
+              RowBox[{"phix", "+", 
+               RowBox[{"2", " ", "PhiX"}]}], ")"}]}]], " ", "ritmx"}], "-", 
+          RowBox[{
+           SuperscriptBox["\[ExponentialE]", 
+            RowBox[{"\[ImaginaryI]", " ", "phix"}]], " ", 
+           SuperscriptBox["retmx", "2"], " ", "ritmx"}], "-", 
+          RowBox[{
+           SuperscriptBox["\[ExponentialE]", 
+            RowBox[{"\[ImaginaryI]", " ", "PhiX"}]], " ", "retmx", " ", 
+           SuperscriptBox["titmx", "2"]}]}], ")"}]}], 
+       RowBox[{
+        SuperscriptBox["\[ExponentialE]", 
+         RowBox[{
+          RowBox[{"3", " ", "\[ImaginaryI]", " ", "phix"}], "+", 
+          RowBox[{"2", " ", "\[ImaginaryI]", " ", "PhiX"}]}]], "-", 
+        RowBox[{
+         SuperscriptBox["\[ExponentialE]", 
+          RowBox[{"3", " ", "\[ImaginaryI]", " ", "phix"}]], " ", 
+         SuperscriptBox["retmx", "2"]}], "+", 
+        RowBox[{
+         SuperscriptBox["\[ExponentialE]", 
+          RowBox[{"\[ImaginaryI]", " ", 
+           RowBox[{"(", 
+            RowBox[{"phix", "+", 
+             RowBox[{"2", " ", "PhiX"}]}], ")"}]}]], " ", 
+         SuperscriptBox["ritmx", "2"]}], "-", 
+        RowBox[{
+         SuperscriptBox["\[ExponentialE]", 
+          RowBox[{"\[ImaginaryI]", " ", "phix"}]], " ", 
+         SuperscriptBox["retmx", "2"], " ", 
+         SuperscriptBox["ritmx", "2"]}], "-", 
+        RowBox[{
+         SuperscriptBox["\[ExponentialE]", 
+          RowBox[{"\[ImaginaryI]", " ", "PhiX"}]], " ", "retmx", " ", "ritmx",
+          " ", 
+         SuperscriptBox["titmx", "2"]}]}]], 
+      FractionBox[
+       RowBox[{
+        RowBox[{
+         SuperscriptBox["\[ExponentialE]", 
+          RowBox[{"2", " ", "\[ImaginaryI]", " ", 
+           RowBox[{"(", 
+            RowBox[{"phix", "+", "PhiX"}], ")"}]}]], " ", "ritmx"}], "-", 
+        RowBox[{
+         SuperscriptBox["\[ExponentialE]", 
+          RowBox[{"2", " ", "\[ImaginaryI]", " ", "phix"}]], " ", 
+         SuperscriptBox["retmx", "2"], " ", "ritmx"}], "-", 
+        RowBox[{
+         SuperscriptBox["\[ExponentialE]", 
+          RowBox[{"\[ImaginaryI]", " ", 
+           RowBox[{"(", 
+            RowBox[{"phix", "+", "PhiX"}], ")"}]}]], " ", "retmx", " ", 
+         SuperscriptBox["titmx", "2"]}]}], 
+       RowBox[{
+        SuperscriptBox["\[ExponentialE]", 
+         RowBox[{
+          RowBox[{"3", " ", "\[ImaginaryI]", " ", "phix"}], "+", 
+          RowBox[{"2", " ", "\[ImaginaryI]", " ", "PhiX"}]}]], "-", 
+        RowBox[{
+         SuperscriptBox["\[ExponentialE]", 
+          RowBox[{"3", " ", "\[ImaginaryI]", " ", "phix"}]], " ", 
+         SuperscriptBox["retmx", "2"]}], "+", 
+        RowBox[{
+         SuperscriptBox["\[ExponentialE]", 
+          RowBox[{"\[ImaginaryI]", " ", 
+           RowBox[{"(", 
+            RowBox[{"phix", "+", 
+             RowBox[{"2", " ", "PhiX"}]}], ")"}]}]], " ", 
+         SuperscriptBox["ritmx", "2"]}], "-", 
+        RowBox[{
+         SuperscriptBox["\[ExponentialE]", 
+          RowBox[{"\[ImaginaryI]", " ", "phix"}]], " ", 
+         SuperscriptBox["retmx", "2"], " ", 
+         SuperscriptBox["ritmx", "2"]}], "-", 
+        RowBox[{
+         SuperscriptBox["\[ExponentialE]", 
+          RowBox[{"\[ImaginaryI]", " ", "PhiX"}]], " ", "retmx", " ", "ritmx",
+          " ", 
+         SuperscriptBox["titmx", "2"]}]}]], "0", 
+      RowBox[{"-", 
+       FractionBox[
+        RowBox[{
+         SuperscriptBox["\[ExponentialE]", 
+          RowBox[{"\[ImaginaryI]", " ", 
+           RowBox[{"(", 
+            RowBox[{
+             RowBox[{"2", " ", "phix"}], "+", "PhiX"}], ")"}]}]], " ", 
+         "retmx", " ", "titmx"}], 
+        RowBox[{
+         SuperscriptBox["\[ExponentialE]", 
+          RowBox[{
+           RowBox[{"3", " ", "\[ImaginaryI]", " ", "phix"}], "+", 
+           RowBox[{"2", " ", "\[ImaginaryI]", " ", "PhiX"}]}]], "-", 
+         RowBox[{
+          SuperscriptBox["\[ExponentialE]", 
+           RowBox[{"3", " ", "\[ImaginaryI]", " ", "phix"}]], " ", 
+          SuperscriptBox["retmx", "2"]}], "+", 
+         RowBox[{
+          SuperscriptBox["\[ExponentialE]", 
+           RowBox[{"\[ImaginaryI]", " ", 
+            RowBox[{"(", 
+             RowBox[{"phix", "+", 
+              RowBox[{"2", " ", "PhiX"}]}], ")"}]}]], " ", 
+          SuperscriptBox["ritmx", "2"]}], "-", 
+         RowBox[{
+          SuperscriptBox["\[ExponentialE]", 
+           RowBox[{"\[ImaginaryI]", " ", "phix"}]], " ", 
+          SuperscriptBox["retmx", "2"], " ", 
+          SuperscriptBox["ritmx", "2"]}], "-", 
+         RowBox[{
+          SuperscriptBox["\[ExponentialE]", 
+           RowBox[{"\[ImaginaryI]", " ", "PhiX"}]], " ", "retmx", " ", 
+          "ritmx", " ", 
+          SuperscriptBox["titmx", "2"]}]}]]}], 
+      FractionBox[
+       RowBox[{
+        SuperscriptBox["\[ExponentialE]", 
+         RowBox[{"2", " ", "\[ImaginaryI]", " ", 
+          RowBox[{"(", 
+           RowBox[{"phix", "+", "PhiX"}], ")"}]}]], " ", "titmx"}], 
+       RowBox[{
+        SuperscriptBox["\[ExponentialE]", 
+         RowBox[{
+          RowBox[{"3", " ", "\[ImaginaryI]", " ", "phix"}], "+", 
+          RowBox[{"2", " ", "\[ImaginaryI]", " ", "PhiX"}]}]], "-", 
+        RowBox[{
+         SuperscriptBox["\[ExponentialE]", 
+          RowBox[{"3", " ", "\[ImaginaryI]", " ", "phix"}]], " ", 
+         SuperscriptBox["retmx", "2"]}], "+", 
+        RowBox[{
+         SuperscriptBox["\[ExponentialE]", 
+          RowBox[{"\[ImaginaryI]", " ", 
+           RowBox[{"(", 
+            RowBox[{"phix", "+", 
+             RowBox[{"2", " ", "PhiX"}]}], ")"}]}]], " ", 
+         SuperscriptBox["ritmx", "2"]}], "-", 
+        RowBox[{
+         SuperscriptBox["\[ExponentialE]", 
+          RowBox[{"\[ImaginaryI]", " ", "phix"}]], " ", 
+         SuperscriptBox["retmx", "2"], " ", 
+         SuperscriptBox["ritmx", "2"]}], "-", 
+        RowBox[{
+         SuperscriptBox["\[ExponentialE]", 
+          RowBox[{"\[ImaginaryI]", " ", "PhiX"}]], " ", "retmx", " ", "ritmx",
+          " ", 
+         SuperscriptBox["titmx", "2"]}]}]], "0", "0", 
+      FractionBox[
+       RowBox[{
+        SuperscriptBox["\[ExponentialE]", 
+         RowBox[{"3", " ", "\[ImaginaryI]", " ", "phix"}]], " ", 
+        RowBox[{"(", 
+         RowBox[{
+          SuperscriptBox["\[ExponentialE]", 
+           RowBox[{"2", " ", "\[ImaginaryI]", " ", "PhiX"}]], "-", 
+          SuperscriptBox["retmx", "2"]}], ")"}]}], 
+       RowBox[{
+        SuperscriptBox["\[ExponentialE]", 
+         RowBox[{
+          RowBox[{"3", " ", "\[ImaginaryI]", " ", "phix"}], "+", 
+          RowBox[{"2", " ", "\[ImaginaryI]", " ", "PhiX"}]}]], "-", 
+        RowBox[{
+         SuperscriptBox["\[ExponentialE]", 
+          RowBox[{"3", " ", "\[ImaginaryI]", " ", "phix"}]], " ", 
+         SuperscriptBox["retmx", "2"]}], "+", 
+        RowBox[{
+         SuperscriptBox["\[ExponentialE]", 
+          RowBox[{"\[ImaginaryI]", " ", 
+           RowBox[{"(", 
+            RowBox[{"phix", "+", 
+             RowBox[{"2", " ", "PhiX"}]}], ")"}]}]], " ", 
+         SuperscriptBox["ritmx", "2"]}], "-", 
+        RowBox[{
+         SuperscriptBox["\[ExponentialE]", 
+          RowBox[{"\[ImaginaryI]", " ", "phix"}]], " ", 
+         SuperscriptBox["retmx", "2"], " ", 
+         SuperscriptBox["ritmx", "2"]}], "-", 
+        RowBox[{
+         SuperscriptBox["\[ExponentialE]", 
+          RowBox[{"\[ImaginaryI]", " ", "PhiX"}]], " ", "retmx", " ", "ritmx",
+          " ", 
+         SuperscriptBox["titmx", "2"]}]}]], "0", "0", "0"},
+     {
+      FractionBox[
+       RowBox[{
+        RowBox[{
+         RowBox[{"-", 
+          SuperscriptBox["\[ExponentialE]", 
+           RowBox[{"2", " ", "\[ImaginaryI]", " ", 
+            RowBox[{"(", 
+             RowBox[{"phiy", "+", "PhiY"}], ")"}]}]]}], " ", "rbs", " ", 
+         "ritmy"}], "+", 
+        RowBox[{
+         SuperscriptBox["\[ExponentialE]", 
+          RowBox[{"2", " ", "\[ImaginaryI]", " ", "phiy"}]], " ", "rbs", " ", 
+         
+         SuperscriptBox["retmy", "2"], " ", "ritmy"}], "+", 
+        RowBox[{
+         SuperscriptBox["\[ExponentialE]", 
+          RowBox[{"\[ImaginaryI]", " ", 
+           RowBox[{"(", 
+            RowBox[{"phiy", "+", "PhiY"}], ")"}]}]], " ", "rbs", " ", "retmy",
+          " ", 
+         SuperscriptBox["titmy", "2"]}]}], 
+       RowBox[{
+        SuperscriptBox["\[ExponentialE]", 
+         RowBox[{
+          RowBox[{"3", " ", "\[ImaginaryI]", " ", "phiy"}], "+", 
+          RowBox[{"2", " ", "\[ImaginaryI]", " ", "PhiY"}]}]], "-", 
+        RowBox[{
+         SuperscriptBox["\[ExponentialE]", 
+          RowBox[{"3", " ", "\[ImaginaryI]", " ", "phiy"}]], " ", 
+         SuperscriptBox["retmy", "2"]}], "+", 
+        RowBox[{
+         SuperscriptBox["\[ExponentialE]", 
+          RowBox[{"\[ImaginaryI]", " ", 
+           RowBox[{"(", 
+            RowBox[{"phiy", "+", 
+             RowBox[{"2", " ", "PhiY"}]}], ")"}]}]], " ", 
+         SuperscriptBox["ritmy", "2"]}], "-", 
+        RowBox[{
+         SuperscriptBox["\[ExponentialE]", 
+          RowBox[{"\[ImaginaryI]", " ", "phiy"}]], " ", 
+         SuperscriptBox["retmy", "2"], " ", 
+         SuperscriptBox["ritmy", "2"]}], "-", 
+        RowBox[{
+         SuperscriptBox["\[ExponentialE]", 
+          RowBox[{"\[ImaginaryI]", " ", "PhiY"}]], " ", "retmy", " ", "ritmy",
+          " ", 
+         SuperscriptBox["titmy", "2"]}]}]], "0", 
+      FractionBox[
+       RowBox[{
+        RowBox[{
+         SuperscriptBox["\[ExponentialE]", 
+          RowBox[{"2", " ", "\[ImaginaryI]", " ", 
+           RowBox[{"(", 
+            RowBox[{"phiy", "+", "PhiY"}], ")"}]}]], " ", "ritmy"}], "-", 
+        RowBox[{
+         SuperscriptBox["\[ExponentialE]", 
+          RowBox[{"2", " ", "\[ImaginaryI]", " ", "phiy"}]], " ", 
+         SuperscriptBox["retmy", "2"], " ", "ritmy"}], "-", 
+        RowBox[{
+         SuperscriptBox["\[ExponentialE]", 
+          RowBox[{"\[ImaginaryI]", " ", 
+           RowBox[{"(", 
+            RowBox[{"phiy", "+", "PhiY"}], ")"}]}]], " ", "retmy", " ", 
+         SuperscriptBox["titmy", "2"]}]}], 
+       RowBox[{
+        SuperscriptBox["\[ExponentialE]", 
+         RowBox[{
+          RowBox[{"3", " ", "\[ImaginaryI]", " ", "phiy"}], "+", 
+          RowBox[{"2", " ", "\[ImaginaryI]", " ", "PhiY"}]}]], "-", 
+        RowBox[{
+         SuperscriptBox["\[ExponentialE]", 
+          RowBox[{"3", " ", "\[ImaginaryI]", " ", "phiy"}]], " ", 
+         SuperscriptBox["retmy", "2"]}], "+", 
+        RowBox[{
+         SuperscriptBox["\[ExponentialE]", 
+          RowBox[{"\[ImaginaryI]", " ", 
+           RowBox[{"(", 
+            RowBox[{"phiy", "+", 
+             RowBox[{"2", " ", "PhiY"}]}], ")"}]}]], " ", 
+         SuperscriptBox["ritmy", "2"]}], "-", 
+        RowBox[{
+         SuperscriptBox["\[ExponentialE]", 
+          RowBox[{"\[ImaginaryI]", " ", "phiy"}]], " ", 
+         SuperscriptBox["retmy", "2"], " ", 
+         SuperscriptBox["ritmy", "2"]}], "-", 
+        RowBox[{
+         SuperscriptBox["\[ExponentialE]", 
+          RowBox[{"\[ImaginaryI]", " ", "PhiY"}]], " ", "retmy", " ", "ritmy",
+          " ", 
+         SuperscriptBox["titmy", "2"]}]}]], "0", "0", 
+      RowBox[{"-", 
+       FractionBox[
+        RowBox[{
+         SuperscriptBox["\[ExponentialE]", 
+          RowBox[{"\[ImaginaryI]", " ", 
+           RowBox[{"(", 
+            RowBox[{
+             RowBox[{"2", " ", "phiy"}], "+", "PhiY"}], ")"}]}]], " ", 
+         "retmy", " ", "titmy"}], 
+        RowBox[{
+         SuperscriptBox["\[ExponentialE]", 
+          RowBox[{
+           RowBox[{"3", " ", "\[ImaginaryI]", " ", "phiy"}], "+", 
+           RowBox[{"2", " ", "\[ImaginaryI]", " ", "PhiY"}]}]], "-", 
+         RowBox[{
+          SuperscriptBox["\[ExponentialE]", 
+           RowBox[{"3", " ", "\[ImaginaryI]", " ", "phiy"}]], " ", 
+          SuperscriptBox["retmy", "2"]}], "+", 
+         RowBox[{
+          SuperscriptBox["\[ExponentialE]", 
+           RowBox[{"\[ImaginaryI]", " ", 
+            RowBox[{"(", 
+             RowBox[{"phiy", "+", 
+              RowBox[{"2", " ", "PhiY"}]}], ")"}]}]], " ", 
+          SuperscriptBox["ritmy", "2"]}], "-", 
+         RowBox[{
+          SuperscriptBox["\[ExponentialE]", 
+           RowBox[{"\[ImaginaryI]", " ", "phiy"}]], " ", 
+          SuperscriptBox["retmy", "2"], " ", 
+          SuperscriptBox["ritmy", "2"]}], "-", 
+         RowBox[{
+          SuperscriptBox["\[ExponentialE]", 
+           RowBox[{"\[ImaginaryI]", " ", "PhiY"}]], " ", "retmy", " ", 
+          "ritmy", " ", 
+          SuperscriptBox["titmy", "2"]}]}]]}], 
+      FractionBox[
+       RowBox[{
+        SuperscriptBox["\[ExponentialE]", 
+         RowBox[{"2", " ", "\[ImaginaryI]", " ", 
+          RowBox[{"(", 
+           RowBox[{"phiy", "+", "PhiY"}], ")"}]}]], " ", "titmy"}], 
+       RowBox[{
+        SuperscriptBox["\[ExponentialE]", 
+         RowBox[{
+          RowBox[{"3", " ", "\[ImaginaryI]", " ", "phiy"}], "+", 
+          RowBox[{"2", " ", "\[ImaginaryI]", " ", "PhiY"}]}]], "-", 
+        RowBox[{
+         SuperscriptBox["\[ExponentialE]", 
+          RowBox[{"3", " ", "\[ImaginaryI]", " ", "phiy"}]], " ", 
+         SuperscriptBox["retmy", "2"]}], "+", 
+        RowBox[{
+         SuperscriptBox["\[ExponentialE]", 
+          RowBox[{"\[ImaginaryI]", " ", 
+           RowBox[{"(", 
+            RowBox[{"phiy", "+", 
+             RowBox[{"2", " ", "PhiY"}]}], ")"}]}]], " ", 
+         SuperscriptBox["ritmy", "2"]}], "-", 
+        RowBox[{
+         SuperscriptBox["\[ExponentialE]", 
+          RowBox[{"\[ImaginaryI]", " ", "phiy"}]], " ", 
+         SuperscriptBox["retmy", "2"], " ", 
+         SuperscriptBox["ritmy", "2"]}], "-", 
+        RowBox[{
+         SuperscriptBox["\[ExponentialE]", 
+          RowBox[{"\[ImaginaryI]", " ", "PhiY"}]], " ", "retmy", " ", "ritmy",
+          " ", 
+         SuperscriptBox["titmy", "2"]}]}]], "0", 
+      FractionBox[
+       RowBox[{
+        SuperscriptBox["\[ExponentialE]", 
+         RowBox[{"3", " ", "\[ImaginaryI]", " ", "phiy"}]], " ", 
+        RowBox[{"(", 
+         RowBox[{
+          SuperscriptBox["\[ExponentialE]", 
+           RowBox[{"2", " ", "\[ImaginaryI]", " ", "PhiY"}]], "-", 
+          SuperscriptBox["retmy", "2"]}], ")"}]}], 
+       RowBox[{
+        SuperscriptBox["\[ExponentialE]", 
+         RowBox[{
+          RowBox[{"3", " ", "\[ImaginaryI]", " ", "phiy"}], "+", 
+          RowBox[{"2", " ", "\[ImaginaryI]", " ", "PhiY"}]}]], "-", 
+        RowBox[{
+         SuperscriptBox["\[ExponentialE]", 
+          RowBox[{"3", " ", "\[ImaginaryI]", " ", "phiy"}]], " ", 
+         SuperscriptBox["retmy", "2"]}], "+", 
+        RowBox[{
+         SuperscriptBox["\[ExponentialE]", 
+          RowBox[{"\[ImaginaryI]", " ", 
+           RowBox[{"(", 
+            RowBox[{"phiy", "+", 
+             RowBox[{"2", " ", "PhiY"}]}], ")"}]}]], " ", 
+         SuperscriptBox["ritmy", "2"]}], "-", 
+        RowBox[{
+         SuperscriptBox["\[ExponentialE]", 
+          RowBox[{"\[ImaginaryI]", " ", "phiy"}]], " ", 
+         SuperscriptBox["retmy", "2"], " ", 
+         SuperscriptBox["ritmy", "2"]}], "-", 
+        RowBox[{
+         SuperscriptBox["\[ExponentialE]", 
+          RowBox[{"\[ImaginaryI]", " ", "PhiY"}]], " ", "retmy", " ", "ritmy",
+          " ", 
+         SuperscriptBox["titmy", "2"]}]}]], "0", "0"},
+     {
+      FractionBox[
+       RowBox[{
+        RowBox[{
+         RowBox[{"-", 
+          SuperscriptBox["\[ExponentialE]", 
+           RowBox[{"\[ImaginaryI]", " ", 
+            RowBox[{"(", 
+             RowBox[{
+              RowBox[{"3", " ", "phix"}], "+", 
+              RowBox[{"2", " ", "PhiX"}], "+", "phiy", "+", 
+              RowBox[{"2", " ", "PhiY"}]}], ")"}]}]]}], " ", 
+         SuperscriptBox["rbs", "2"], " ", "ritmy"}], "+", 
+        RowBox[{
+         SuperscriptBox["\[ExponentialE]", 
+          RowBox[{"\[ImaginaryI]", " ", 
+           RowBox[{"(", 
+            RowBox[{
+             RowBox[{"3", " ", "phix"}], "+", "phiy", "+", 
+             RowBox[{"2", " ", "PhiY"}]}], ")"}]}]], " ", 
+         SuperscriptBox["rbs", "2"], " ", 
+         SuperscriptBox["retmx", "2"], " ", "ritmy"}], "+", 
+        RowBox[{
+         SuperscriptBox["\[ExponentialE]", 
+          RowBox[{"\[ImaginaryI]", " ", 
+           RowBox[{"(", 
+            RowBox[{
+             RowBox[{"3", " ", "phix"}], "+", 
+             RowBox[{"2", " ", "PhiX"}], "+", "phiy"}], ")"}]}]], " ", 
+         SuperscriptBox["rbs", "2"], " ", 
+         SuperscriptBox["retmy", "2"], " ", "ritmy"}], "-", 
+        RowBox[{
+         SuperscriptBox["\[ExponentialE]", 
+          RowBox[{"\[ImaginaryI]", " ", 
+           RowBox[{"(", 
+            RowBox[{
+             RowBox[{"3", " ", "phix"}], "+", "phiy"}], ")"}]}]], " ", 
+         SuperscriptBox["rbs", "2"], " ", 
+         SuperscriptBox["retmx", "2"], " ", 
+         SuperscriptBox["retmy", "2"], " ", "ritmy"}], "+", 
+        RowBox[{
+         SuperscriptBox["\[ExponentialE]", 
+          RowBox[{"\[ImaginaryI]", " ", 
+           RowBox[{"(", 
+            RowBox[{"phix", "+", 
+             RowBox[{"2", " ", "PhiX"}], "+", 
+             RowBox[{"3", " ", "phiy"}], "+", 
+             RowBox[{"2", " ", "PhiY"}]}], ")"}]}]], " ", "ritmx", " ", 
+         SuperscriptBox["tbs", "2"]}], "-", 
+        RowBox[{
+         SuperscriptBox["\[ExponentialE]", 
+          RowBox[{"\[ImaginaryI]", " ", 
+           RowBox[{"(", 
+            RowBox[{"phix", "+", 
+             RowBox[{"3", " ", "phiy"}], "+", 
+             RowBox[{"2", " ", "PhiY"}]}], ")"}]}]], " ", 
+         SuperscriptBox["retmx", "2"], " ", "ritmx", " ", 
+         SuperscriptBox["tbs", "2"]}], "-", 
+        RowBox[{
+         SuperscriptBox["\[ExponentialE]", 
+          RowBox[{"\[ImaginaryI]", " ", 
+           RowBox[{"(", 
+            RowBox[{"phix", "+", 
+             RowBox[{"2", " ", "PhiX"}], "+", 
+             RowBox[{"3", " ", "phiy"}]}], ")"}]}]], " ", 
+         SuperscriptBox["retmy", "2"], " ", "ritmx", " ", 
+         SuperscriptBox["tbs", "2"]}], "+", 
+        RowBox[{
+         SuperscriptBox["\[ExponentialE]", 
+          RowBox[{"\[ImaginaryI]", " ", 
+           RowBox[{"(", 
+            RowBox[{"phix", "+", 
+             RowBox[{"3", " ", "phiy"}]}], ")"}]}]], " ", 
+         SuperscriptBox["retmx", "2"], " ", 
+         SuperscriptBox["retmy", "2"], " ", "ritmx", " ", 
+         SuperscriptBox["tbs", "2"]}], "-", 
+        RowBox[{
+         SuperscriptBox["\[ExponentialE]", 
+          RowBox[{"\[ImaginaryI]", " ", 
+           RowBox[{"(", 
+            RowBox[{"phix", "+", 
+             RowBox[{"2", " ", "PhiX"}], "+", "phiy", "+", 
+             RowBox[{"2", " ", "PhiY"}]}], ")"}]}]], " ", "ritmx", " ", 
+         "ritmy", " ", 
+         RowBox[{"(", 
+          RowBox[{
+           RowBox[{
+            SuperscriptBox["rbs", "2"], " ", "ritmx"}], "-", 
+           RowBox[{"ritmy", " ", 
+            SuperscriptBox["tbs", "2"]}]}], ")"}]}], "+", 
+        RowBox[{
+         SuperscriptBox["\[ExponentialE]", 
+          RowBox[{"\[ImaginaryI]", " ", 
+           RowBox[{"(", 
+            RowBox[{"phix", "+", "phiy", "+", 
+             RowBox[{"2", " ", "PhiY"}]}], ")"}]}]], " ", 
+         SuperscriptBox["retmx", "2"], " ", "ritmx", " ", "ritmy", " ", 
+         RowBox[{"(", 
+          RowBox[{
+           RowBox[{
+            SuperscriptBox["rbs", "2"], " ", "ritmx"}], "-", 
+           RowBox[{"ritmy", " ", 
+            SuperscriptBox["tbs", "2"]}]}], ")"}]}], "+", 
+        RowBox[{
+         SuperscriptBox["\[ExponentialE]", 
+          RowBox[{"\[ImaginaryI]", " ", 
+           RowBox[{"(", 
+            RowBox[{"phix", "+", 
+             RowBox[{"2", " ", "PhiX"}], "+", "phiy"}], ")"}]}]], " ", 
+         SuperscriptBox["retmy", "2"], " ", "ritmx", " ", "ritmy", " ", 
+         RowBox[{"(", 
+          RowBox[{
+           RowBox[{
+            SuperscriptBox["rbs", "2"], " ", "ritmx"}], "-", 
+           RowBox[{"ritmy", " ", 
+            SuperscriptBox["tbs", "2"]}]}], ")"}]}], "-", 
+        RowBox[{
+         SuperscriptBox["\[ExponentialE]", 
+          RowBox[{"\[ImaginaryI]", " ", 
+           RowBox[{"(", 
+            RowBox[{"phix", "+", "phiy"}], ")"}]}]], " ", 
+         SuperscriptBox["retmx", "2"], " ", 
+         SuperscriptBox["retmy", "2"], " ", "ritmx", " ", "ritmy", " ", 
+         RowBox[{"(", 
+          RowBox[{
+           RowBox[{
+            SuperscriptBox["rbs", "2"], " ", "ritmx"}], "-", 
+           RowBox[{"ritmy", " ", 
+            SuperscriptBox["tbs", "2"]}]}], ")"}]}], "-", 
+        RowBox[{
+         SuperscriptBox["\[ExponentialE]", 
+          RowBox[{"\[ImaginaryI]", " ", 
+           RowBox[{"(", 
+            RowBox[{"PhiX", "+", 
+             RowBox[{"3", " ", "phiy"}], "+", 
+             RowBox[{"2", " ", "PhiY"}]}], ")"}]}]], " ", "retmx", " ", 
+         SuperscriptBox["tbs", "2"], " ", 
+         SuperscriptBox["titmx", "2"]}], "+", 
+        RowBox[{
+         SuperscriptBox["\[ExponentialE]", 
+          RowBox[{"\[ImaginaryI]", " ", 
+           RowBox[{"(", 
+            RowBox[{"PhiX", "+", 
+             RowBox[{"3", " ", "phiy"}]}], ")"}]}]], " ", "retmx", " ", 
+         SuperscriptBox["retmy", "2"], " ", 
+         SuperscriptBox["tbs", "2"], " ", 
+         SuperscriptBox["titmx", "2"]}], "+", 
+        RowBox[{
+         SuperscriptBox["\[ExponentialE]", 
+          RowBox[{"\[ImaginaryI]", " ", 
+           RowBox[{"(", 
+            RowBox[{"PhiX", "+", "phiy", "+", 
+             RowBox[{"2", " ", "PhiY"}]}], ")"}]}]], " ", "retmx", " ", 
+         "ritmy", " ", 
+         RowBox[{"(", 
+          RowBox[{
+           RowBox[{
+            SuperscriptBox["rbs", "2"], " ", "ritmx"}], "-", 
+           RowBox[{"ritmy", " ", 
+            SuperscriptBox["tbs", "2"]}]}], ")"}], " ", 
+         SuperscriptBox["titmx", "2"]}], "+", 
+        RowBox[{
+         SuperscriptBox["\[ExponentialE]", 
+          RowBox[{"\[ImaginaryI]", " ", 
+           RowBox[{"(", 
+            RowBox[{"PhiX", "+", "phiy"}], ")"}]}]], " ", "retmx", " ", 
+         SuperscriptBox["retmy", "2"], " ", "ritmy", " ", 
+         RowBox[{"(", 
+          RowBox[{
+           RowBox[{
+            RowBox[{"-", 
+             SuperscriptBox["rbs", "2"]}], " ", "ritmx"}], "+", 
+           RowBox[{"ritmy", " ", 
+            SuperscriptBox["tbs", "2"]}]}], ")"}], " ", 
+         SuperscriptBox["titmx", "2"]}], "+", 
+        RowBox[{
+         SuperscriptBox["\[ExponentialE]", 
+          RowBox[{"\[ImaginaryI]", " ", 
+           RowBox[{"(", 
+            RowBox[{
+             RowBox[{"3", " ", "phix"}], "+", 
+             RowBox[{"2", " ", "PhiX"}], "+", "PhiY"}], ")"}]}]], " ", 
+         SuperscriptBox["rbs", "2"], " ", "retmy", " ", 
+         SuperscriptBox["titmy", "2"]}], "-", 
+        RowBox[{
+         SuperscriptBox["\[ExponentialE]", 
+          RowBox[{"\[ImaginaryI]", " ", 
+           RowBox[{"(", 
+            RowBox[{
+             RowBox[{"3", " ", "phix"}], "+", "PhiY"}], ")"}]}]], " ", 
+         SuperscriptBox["rbs", "2"], " ", 
+         SuperscriptBox["retmx", "2"], " ", "retmy", " ", 
+         SuperscriptBox["titmy", "2"]}], "+", 
+        RowBox[{
+         SuperscriptBox["\[ExponentialE]", 
+          RowBox[{"\[ImaginaryI]", " ", 
+           RowBox[{"(", 
+            RowBox[{"phix", "+", 
+             RowBox[{"2", " ", "PhiX"}], "+", "PhiY"}], ")"}]}]], " ", 
+         "retmy", " ", "ritmx", " ", 
+         RowBox[{"(", 
+          RowBox[{
+           RowBox[{
+            SuperscriptBox["rbs", "2"], " ", "ritmx"}], "-", 
+           RowBox[{"ritmy", " ", 
+            SuperscriptBox["tbs", "2"]}]}], ")"}], " ", 
+         SuperscriptBox["titmy", "2"]}], "-", 
+        RowBox[{
+         SuperscriptBox["\[ExponentialE]", 
+          RowBox[{"\[ImaginaryI]", " ", 
+           RowBox[{"(", 
+            RowBox[{"phix", "+", "PhiY"}], ")"}]}]], " ", 
+         SuperscriptBox["retmx", "2"], " ", "retmy", " ", "ritmx", " ", 
+         RowBox[{"(", 
+          RowBox[{
+           RowBox[{
+            SuperscriptBox["rbs", "2"], " ", "ritmx"}], "-", 
+           RowBox[{"ritmy", " ", 
+            SuperscriptBox["tbs", "2"]}]}], ")"}], " ", 
+         SuperscriptBox["titmy", "2"]}], "-", 
+        RowBox[{
+         SuperscriptBox["\[ExponentialE]", 
+          RowBox[{"\[ImaginaryI]", " ", 
+           RowBox[{"(", 
+            RowBox[{"PhiX", "+", "PhiY"}], ")"}]}]], " ", "retmx", " ", 
+         "retmy", " ", 
+         RowBox[{"(", 
+          RowBox[{
+           RowBox[{
+            SuperscriptBox["rbs", "2"], " ", "ritmx"}], "-", 
+           RowBox[{"ritmy", " ", 
+            SuperscriptBox["tbs", "2"]}]}], ")"}], " ", 
+         SuperscriptBox["titmx", "2"], " ", 
+         SuperscriptBox["titmy", "2"]}]}], 
+       RowBox[{
+        RowBox[{"(", 
+         RowBox[{
+          SuperscriptBox["\[ExponentialE]", 
+           RowBox[{
+            RowBox[{"3", " ", "\[ImaginaryI]", " ", "phix"}], "+", 
+            RowBox[{"2", " ", "\[ImaginaryI]", " ", "PhiX"}]}]], "-", 
+          RowBox[{
+           SuperscriptBox["\[ExponentialE]", 
+            RowBox[{"3", " ", "\[ImaginaryI]", " ", "phix"}]], " ", 
+           SuperscriptBox["retmx", "2"]}], "+", 
+          RowBox[{
+           SuperscriptBox["\[ExponentialE]", 
+            RowBox[{"\[ImaginaryI]", " ", 
+             RowBox[{"(", 
+              RowBox[{"phix", "+", 
+               RowBox[{"2", " ", "PhiX"}]}], ")"}]}]], " ", 
+           SuperscriptBox["ritmx", "2"]}], "-", 
+          RowBox[{
+           SuperscriptBox["\[ExponentialE]", 
+            RowBox[{"\[ImaginaryI]", " ", "phix"}]], " ", 
+           SuperscriptBox["retmx", "2"], " ", 
+           SuperscriptBox["ritmx", "2"]}], "-", 
+          RowBox[{
+           SuperscriptBox["\[ExponentialE]", 
+            RowBox[{"\[ImaginaryI]", " ", "PhiX"}]], " ", "retmx", " ", 
+           "ritmx", " ", 
+           SuperscriptBox["titmx", "2"]}]}], ")"}], " ", 
+        RowBox[{"(", 
+         RowBox[{
+          SuperscriptBox["\[ExponentialE]", 
+           RowBox[{
+            RowBox[{"3", " ", "\[ImaginaryI]", " ", "phiy"}], "+", 
+            RowBox[{"2", " ", "\[ImaginaryI]", " ", "PhiY"}]}]], "-", 
+          RowBox[{
+           SuperscriptBox["\[ExponentialE]", 
+            RowBox[{"3", " ", "\[ImaginaryI]", " ", "phiy"}]], " ", 
+           SuperscriptBox["retmy", "2"]}], "+", 
+          RowBox[{
+           SuperscriptBox["\[ExponentialE]", 
+            RowBox[{"\[ImaginaryI]", " ", 
+             RowBox[{"(", 
+              RowBox[{"phiy", "+", 
+               RowBox[{"2", " ", "PhiY"}]}], ")"}]}]], " ", 
+           SuperscriptBox["ritmy", "2"]}], "-", 
+          RowBox[{
+           SuperscriptBox["\[ExponentialE]", 
+            RowBox[{"\[ImaginaryI]", " ", "phiy"}]], " ", 
+           SuperscriptBox["retmy", "2"], " ", 
+           SuperscriptBox["ritmy", "2"]}], "-", 
+          RowBox[{
+           SuperscriptBox["\[ExponentialE]", 
+            RowBox[{"\[ImaginaryI]", " ", "PhiY"}]], " ", "retmy", " ", 
+           "ritmy", " ", 
+           SuperscriptBox["titmy", "2"]}]}], ")"}]}]], 
+      FractionBox[
+       RowBox[{"tbs", " ", 
+        RowBox[{"(", 
+         RowBox[{
+          RowBox[{
+           SuperscriptBox["\[ExponentialE]", 
+            RowBox[{"\[ImaginaryI]", " ", 
+             RowBox[{"(", 
+              RowBox[{"phix", "+", 
+               RowBox[{"2", " ", "PhiX"}]}], ")"}]}]], " ", "ritmx"}], "-", 
+          RowBox[{
+           SuperscriptBox["\[ExponentialE]", 
+            RowBox[{"\[ImaginaryI]", " ", "phix"}]], " ", 
+           SuperscriptBox["retmx", "2"], " ", "ritmx"}], "-", 
+          RowBox[{
+           SuperscriptBox["\[ExponentialE]", 
+            RowBox[{"\[ImaginaryI]", " ", "PhiX"}]], " ", "retmx", " ", 
+           SuperscriptBox["titmx", "2"]}]}], ")"}]}], 
+       RowBox[{
+        SuperscriptBox["\[ExponentialE]", 
+         RowBox[{
+          RowBox[{"3", " ", "\[ImaginaryI]", " ", "phix"}], "+", 
+          RowBox[{"2", " ", "\[ImaginaryI]", " ", "PhiX"}]}]], "-", 
+        RowBox[{
+         SuperscriptBox["\[ExponentialE]", 
+          RowBox[{"3", " ", "\[ImaginaryI]", " ", "phix"}]], " ", 
+         SuperscriptBox["retmx", "2"]}], "+", 
+        RowBox[{
+         SuperscriptBox["\[ExponentialE]", 
+          RowBox[{"\[ImaginaryI]", " ", 
+           RowBox[{"(", 
+            RowBox[{"phix", "+", 
+             RowBox[{"2", " ", "PhiX"}]}], ")"}]}]], " ", 
+         SuperscriptBox["ritmx", "2"]}], "-", 
+        RowBox[{
+         SuperscriptBox["\[ExponentialE]", 
+          RowBox[{"\[ImaginaryI]", " ", "phix"}]], " ", 
+         SuperscriptBox["retmx", "2"], " ", 
+         SuperscriptBox["ritmx", "2"]}], "-", 
+        RowBox[{
+         SuperscriptBox["\[ExponentialE]", 
+          RowBox[{"\[ImaginaryI]", " ", "PhiX"}]], " ", "retmx", " ", "ritmx",
+          " ", 
+         SuperscriptBox["titmx", "2"]}]}]], 
+      FractionBox[
+       RowBox[{"rbs", " ", 
+        RowBox[{"(", 
+         RowBox[{
+          RowBox[{
+           SuperscriptBox["\[ExponentialE]", 
+            RowBox[{"\[ImaginaryI]", " ", 
+             RowBox[{"(", 
+              RowBox[{"phiy", "+", 
+               RowBox[{"2", " ", "PhiY"}]}], ")"}]}]], " ", "ritmy"}], "-", 
+          RowBox[{
+           SuperscriptBox["\[ExponentialE]", 
+            RowBox[{"\[ImaginaryI]", " ", "phiy"}]], " ", 
+           SuperscriptBox["retmy", "2"], " ", "ritmy"}], "-", 
+          RowBox[{
+           SuperscriptBox["\[ExponentialE]", 
+            RowBox[{"\[ImaginaryI]", " ", "PhiY"}]], " ", "retmy", " ", 
+           SuperscriptBox["titmy", "2"]}]}], ")"}]}], 
+       RowBox[{
+        SuperscriptBox["\[ExponentialE]", 
+         RowBox[{
+          RowBox[{"3", " ", "\[ImaginaryI]", " ", "phiy"}], "+", 
+          RowBox[{"2", " ", "\[ImaginaryI]", " ", "PhiY"}]}]], "-", 
+        RowBox[{
+         SuperscriptBox["\[ExponentialE]", 
+          RowBox[{"3", " ", "\[ImaginaryI]", " ", "phiy"}]], " ", 
+         SuperscriptBox["retmy", "2"]}], "+", 
+        RowBox[{
+         SuperscriptBox["\[ExponentialE]", 
+          RowBox[{"\[ImaginaryI]", " ", 
+           RowBox[{"(", 
+            RowBox[{"phiy", "+", 
+             RowBox[{"2", " ", "PhiY"}]}], ")"}]}]], " ", 
+         SuperscriptBox["ritmy", "2"]}], "-", 
+        RowBox[{
+         SuperscriptBox["\[ExponentialE]", 
+          RowBox[{"\[ImaginaryI]", " ", "phiy"}]], " ", 
+         SuperscriptBox["retmy", "2"], " ", 
+         SuperscriptBox["ritmy", "2"]}], "-", 
+        RowBox[{
+         SuperscriptBox["\[ExponentialE]", 
+          RowBox[{"\[ImaginaryI]", " ", "PhiY"}]], " ", "retmy", " ", "ritmy",
+          " ", 
+         SuperscriptBox["titmy", "2"]}]}]], 
+      RowBox[{"-", 
+       FractionBox[
+        RowBox[{
+         SuperscriptBox["\[ExponentialE]", 
+          RowBox[{"\[ImaginaryI]", " ", 
+           RowBox[{"(", 
+            RowBox[{"phix", "+", "PhiX"}], ")"}]}]], " ", "retmx", " ", "tbs",
+          " ", "titmx"}], 
+        RowBox[{
+         SuperscriptBox["\[ExponentialE]", 
+          RowBox[{
+           RowBox[{"3", " ", "\[ImaginaryI]", " ", "phix"}], "+", 
+           RowBox[{"2", " ", "\[ImaginaryI]", " ", "PhiX"}]}]], "-", 
+         RowBox[{
+          SuperscriptBox["\[ExponentialE]", 
+           RowBox[{"3", " ", "\[ImaginaryI]", " ", "phix"}]], " ", 
+          SuperscriptBox["retmx", "2"]}], "+", 
+         RowBox[{
+          SuperscriptBox["\[ExponentialE]", 
+           RowBox[{"\[ImaginaryI]", " ", 
+            RowBox[{"(", 
+             RowBox[{"phix", "+", 
+              RowBox[{"2", " ", "PhiX"}]}], ")"}]}]], " ", 
+          SuperscriptBox["ritmx", "2"]}], "-", 
+         RowBox[{
+          SuperscriptBox["\[ExponentialE]", 
+           RowBox[{"\[ImaginaryI]", " ", "phix"}]], " ", 
+          SuperscriptBox["retmx", "2"], " ", 
+          SuperscriptBox["ritmx", "2"]}], "-", 
+         RowBox[{
+          SuperscriptBox["\[ExponentialE]", 
+           RowBox[{"\[ImaginaryI]", " ", "PhiX"}]], " ", "retmx", " ", 
+          "ritmx", " ", 
+          SuperscriptBox["titmx", "2"]}]}]]}], 
+      FractionBox[
+       RowBox[{
+        SuperscriptBox["\[ExponentialE]", 
+         RowBox[{"\[ImaginaryI]", " ", 
+          RowBox[{"(", 
+           RowBox[{"phix", "+", 
+            RowBox[{"2", " ", "PhiX"}]}], ")"}]}]], " ", "tbs", " ", 
+        "titmx"}], 
+       RowBox[{
+        SuperscriptBox["\[ExponentialE]", 
+         RowBox[{
+          RowBox[{"3", " ", "\[ImaginaryI]", " ", "phix"}], "+", 
+          RowBox[{"2", " ", "\[ImaginaryI]", " ", "PhiX"}]}]], "-", 
+        RowBox[{
+         SuperscriptBox["\[ExponentialE]", 
+          RowBox[{"3", " ", "\[ImaginaryI]", " ", "phix"}]], " ", 
+         SuperscriptBox["retmx", "2"]}], "+", 
+        RowBox[{
+         SuperscriptBox["\[ExponentialE]", 
+          RowBox[{"\[ImaginaryI]", " ", 
+           RowBox[{"(", 
+            RowBox[{"phix", "+", 
+             RowBox[{"2", " ", "PhiX"}]}], ")"}]}]], " ", 
+         SuperscriptBox["ritmx", "2"]}], "-", 
+        RowBox[{
+         SuperscriptBox["\[ExponentialE]", 
+          RowBox[{"\[ImaginaryI]", " ", "phix"}]], " ", 
+         SuperscriptBox["retmx", "2"], " ", 
+         SuperscriptBox["ritmx", "2"]}], "-", 
+        RowBox[{
+         SuperscriptBox["\[ExponentialE]", 
+          RowBox[{"\[ImaginaryI]", " ", "PhiX"}]], " ", "retmx", " ", "ritmx",
+          " ", 
+         SuperscriptBox["titmx", "2"]}]}]], 
+      RowBox[{"-", 
+       FractionBox[
+        RowBox[{
+         SuperscriptBox["\[ExponentialE]", 
+          RowBox[{"\[ImaginaryI]", " ", 
+           RowBox[{"(", 
+            RowBox[{"phiy", "+", "PhiY"}], ")"}]}]], " ", "rbs", " ", "retmy",
+          " ", "titmy"}], 
+        RowBox[{
+         SuperscriptBox["\[ExponentialE]", 
+          RowBox[{
+           RowBox[{"3", " ", "\[ImaginaryI]", " ", "phiy"}], "+", 
+           RowBox[{"2", " ", "\[ImaginaryI]", " ", "PhiY"}]}]], "-", 
+         RowBox[{
+          SuperscriptBox["\[ExponentialE]", 
+           RowBox[{"3", " ", "\[ImaginaryI]", " ", "phiy"}]], " ", 
+          SuperscriptBox["retmy", "2"]}], "+", 
+         RowBox[{
+          SuperscriptBox["\[ExponentialE]", 
+           RowBox[{"\[ImaginaryI]", " ", 
+            RowBox[{"(", 
+             RowBox[{"phiy", "+", 
+              RowBox[{"2", " ", "PhiY"}]}], ")"}]}]], " ", 
+          SuperscriptBox["ritmy", "2"]}], "-", 
+         RowBox[{
+          SuperscriptBox["\[ExponentialE]", 
+           RowBox[{"\[ImaginaryI]", " ", "phiy"}]], " ", 
+          SuperscriptBox["retmy", "2"], " ", 
+          SuperscriptBox["ritmy", "2"]}], "-", 
+         RowBox[{
+          SuperscriptBox["\[ExponentialE]", 
+           RowBox[{"\[ImaginaryI]", " ", "PhiY"}]], " ", "retmy", " ", 
+          "ritmy", " ", 
+          SuperscriptBox["titmy", "2"]}]}]]}], 
+      FractionBox[
+       RowBox[{
+        SuperscriptBox["\[ExponentialE]", 
+         RowBox[{"\[ImaginaryI]", " ", 
+          RowBox[{"(", 
+           RowBox[{"phiy", "+", 
+            RowBox[{"2", " ", "PhiY"}]}], ")"}]}]], " ", "rbs", " ", 
+        "titmy"}], 
+       RowBox[{
+        SuperscriptBox["\[ExponentialE]", 
+         RowBox[{
+          RowBox[{"3", " ", "\[ImaginaryI]", " ", "phiy"}], "+", 
+          RowBox[{"2", " ", "\[ImaginaryI]", " ", "PhiY"}]}]], "-", 
+        RowBox[{
+         SuperscriptBox["\[ExponentialE]", 
+          RowBox[{"3", " ", "\[ImaginaryI]", " ", "phiy"}]], " ", 
+         SuperscriptBox["retmy", "2"]}], "+", 
+        RowBox[{
+         SuperscriptBox["\[ExponentialE]", 
+          RowBox[{"\[ImaginaryI]", " ", 
+           RowBox[{"(", 
+            RowBox[{"phiy", "+", 
+             RowBox[{"2", " ", "PhiY"}]}], ")"}]}]], " ", 
+         SuperscriptBox["ritmy", "2"]}], "-", 
+        RowBox[{
+         SuperscriptBox["\[ExponentialE]", 
+          RowBox[{"\[ImaginaryI]", " ", "phiy"}]], " ", 
+         SuperscriptBox["retmy", "2"], " ", 
+         SuperscriptBox["ritmy", "2"]}], "-", 
+        RowBox[{
+         SuperscriptBox["\[ExponentialE]", 
+          RowBox[{"\[ImaginaryI]", " ", "PhiY"}]], " ", "retmy", " ", "ritmy",
+          " ", 
+         SuperscriptBox["titmy", "2"]}]}]], 
+      FractionBox[
+       RowBox[{
+        SuperscriptBox["\[ExponentialE]", 
+         RowBox[{"2", " ", "\[ImaginaryI]", " ", "phix"}]], " ", 
+        RowBox[{"(", 
+         RowBox[{
+          SuperscriptBox["\[ExponentialE]", 
+           RowBox[{"2", " ", "\[ImaginaryI]", " ", "PhiX"}]], "-", 
+          SuperscriptBox["retmx", "2"]}], ")"}], " ", "tbs"}], 
+       RowBox[{
+        SuperscriptBox["\[ExponentialE]", 
+         RowBox[{
+          RowBox[{"3", " ", "\[ImaginaryI]", " ", "phix"}], "+", 
+          RowBox[{"2", " ", "\[ImaginaryI]", " ", "PhiX"}]}]], "-", 
+        RowBox[{
+         SuperscriptBox["\[ExponentialE]", 
+          RowBox[{"3", " ", "\[ImaginaryI]", " ", "phix"}]], " ", 
+         SuperscriptBox["retmx", "2"]}], "+", 
+        RowBox[{
+         SuperscriptBox["\[ExponentialE]", 
+          RowBox[{"\[ImaginaryI]", " ", 
+           RowBox[{"(", 
+            RowBox[{"phix", "+", 
+             RowBox[{"2", " ", "PhiX"}]}], ")"}]}]], " ", 
+         SuperscriptBox["ritmx", "2"]}], "-", 
+        RowBox[{
+         SuperscriptBox["\[ExponentialE]", 
+          RowBox[{"\[ImaginaryI]", " ", "phix"}]], " ", 
+         SuperscriptBox["retmx", "2"], " ", 
+         SuperscriptBox["ritmx", "2"]}], "-", 
+        RowBox[{
+         SuperscriptBox["\[ExponentialE]", 
+          RowBox[{"\[ImaginaryI]", " ", "PhiX"}]], " ", "retmx", " ", "ritmx",
+          " ", 
+         SuperscriptBox["titmx", "2"]}]}]], 
+      FractionBox[
+       RowBox[{
+        SuperscriptBox["\[ExponentialE]", 
+         RowBox[{"2", " ", "\[ImaginaryI]", " ", "phiy"}]], " ", "rbs", " ", 
+        RowBox[{"(", 
+         RowBox[{
+          SuperscriptBox["\[ExponentialE]", 
+           RowBox[{"2", " ", "\[ImaginaryI]", " ", "PhiY"}]], "-", 
+          SuperscriptBox["retmy", "2"]}], ")"}]}], 
+       RowBox[{
+        SuperscriptBox["\[ExponentialE]", 
+         RowBox[{
+          RowBox[{"3", " ", "\[ImaginaryI]", " ", "phiy"}], "+", 
+          RowBox[{"2", " ", "\[ImaginaryI]", " ", "PhiY"}]}]], "-", 
+        RowBox[{
+         SuperscriptBox["\[ExponentialE]", 
+          RowBox[{"3", " ", "\[ImaginaryI]", " ", "phiy"}]], " ", 
+         SuperscriptBox["retmy", "2"]}], "+", 
+        RowBox[{
+         SuperscriptBox["\[ExponentialE]", 
+          RowBox[{"\[ImaginaryI]", " ", 
+           RowBox[{"(", 
+            RowBox[{"phiy", "+", 
+             RowBox[{"2", " ", "PhiY"}]}], ")"}]}]], " ", 
+         SuperscriptBox["ritmy", "2"]}], "-", 
+        RowBox[{
+         SuperscriptBox["\[ExponentialE]", 
+          RowBox[{"\[ImaginaryI]", " ", "phiy"}]], " ", 
+         SuperscriptBox["retmy", "2"], " ", 
+         SuperscriptBox["ritmy", "2"]}], "-", 
+        RowBox[{
+         SuperscriptBox["\[ExponentialE]", 
+          RowBox[{"\[ImaginaryI]", " ", "PhiY"}]], " ", "retmy", " ", "ritmy",
+          " ", 
+         SuperscriptBox["titmy", "2"]}]}]], "1", "0"},
+     {
+      RowBox[{"-", 
+       FractionBox[
+        RowBox[{"rbs", " ", "tbs", " ", 
+         RowBox[{"(", 
+          RowBox[{
+           RowBox[{
+            SuperscriptBox["\[ExponentialE]", 
+             RowBox[{"\[ImaginaryI]", " ", 
+              RowBox[{"(", 
+               RowBox[{"phix", "+", 
+                RowBox[{"2", " ", "PhiX"}], "+", 
+                RowBox[{"3", " ", "phiy"}], "+", 
+                RowBox[{"2", " ", "PhiY"}]}], ")"}]}]], " ", "ritmx"}], "-", 
+           RowBox[{
+            SuperscriptBox["\[ExponentialE]", 
+             RowBox[{"\[ImaginaryI]", " ", 
+              RowBox[{"(", 
+               RowBox[{"phix", "+", 
+                RowBox[{"3", " ", "phiy"}], "+", 
+                RowBox[{"2", " ", "PhiY"}]}], ")"}]}]], " ", 
+            SuperscriptBox["retmx", "2"], " ", "ritmx"}], "-", 
+           RowBox[{
+            SuperscriptBox["\[ExponentialE]", 
+             RowBox[{"\[ImaginaryI]", " ", 
+              RowBox[{"(", 
+               RowBox[{"phix", "+", 
+                RowBox[{"2", " ", "PhiX"}], "+", 
+                RowBox[{"3", " ", "phiy"}]}], ")"}]}]], " ", 
+            SuperscriptBox["retmy", "2"], " ", "ritmx"}], "+", 
+           RowBox[{
+            SuperscriptBox["\[ExponentialE]", 
+             RowBox[{"\[ImaginaryI]", " ", 
+              RowBox[{"(", 
+               RowBox[{"phix", "+", 
+                RowBox[{"3", " ", "phiy"}]}], ")"}]}]], " ", 
+            SuperscriptBox["retmx", "2"], " ", 
+            SuperscriptBox["retmy", "2"], " ", "ritmx"}], "+", 
+           RowBox[{
+            SuperscriptBox["\[ExponentialE]", 
+             RowBox[{"\[ImaginaryI]", " ", 
+              RowBox[{"(", 
+               RowBox[{
+                RowBox[{"3", " ", "phix"}], "+", 
+                RowBox[{"2", " ", "PhiX"}], "+", "phiy", "+", 
+                RowBox[{"2", " ", "PhiY"}]}], ")"}]}]], " ", "ritmy"}], "-", 
+           RowBox[{
+            SuperscriptBox["\[ExponentialE]", 
+             RowBox[{"\[ImaginaryI]", " ", 
+              RowBox[{"(", 
+               RowBox[{
+                RowBox[{"3", " ", "phix"}], "+", "phiy", "+", 
+                RowBox[{"2", " ", "PhiY"}]}], ")"}]}]], " ", 
+            SuperscriptBox["retmx", "2"], " ", "ritmy"}], "-", 
+           RowBox[{
+            SuperscriptBox["\[ExponentialE]", 
+             RowBox[{"\[ImaginaryI]", " ", 
+              RowBox[{"(", 
+               RowBox[{
+                RowBox[{"3", " ", "phix"}], "+", 
+                RowBox[{"2", " ", "PhiX"}], "+", "phiy"}], ")"}]}]], " ", 
+            SuperscriptBox["retmy", "2"], " ", "ritmy"}], "+", 
+           RowBox[{
+            SuperscriptBox["\[ExponentialE]", 
+             RowBox[{"\[ImaginaryI]", " ", 
+              RowBox[{"(", 
+               RowBox[{
+                RowBox[{"3", " ", "phix"}], "+", "phiy"}], ")"}]}]], " ", 
+            SuperscriptBox["retmx", "2"], " ", 
+            SuperscriptBox["retmy", "2"], " ", "ritmy"}], "+", 
+           RowBox[{
+            SuperscriptBox["\[ExponentialE]", 
+             RowBox[{"\[ImaginaryI]", " ", 
+              RowBox[{"(", 
+               RowBox[{"phix", "+", 
+                RowBox[{"2", " ", "PhiX"}], "+", "phiy", "+", 
+                RowBox[{"2", " ", "PhiY"}]}], ")"}]}]], " ", "ritmx", " ", 
+            "ritmy", " ", 
+            RowBox[{"(", 
+             RowBox[{"ritmx", "+", "ritmy"}], ")"}]}], "-", 
+           RowBox[{
+            SuperscriptBox["\[ExponentialE]", 
+             RowBox[{"\[ImaginaryI]", " ", 
+              RowBox[{"(", 
+               RowBox[{"phix", "+", "phiy", "+", 
+                RowBox[{"2", " ", "PhiY"}]}], ")"}]}]], " ", 
+            SuperscriptBox["retmx", "2"], " ", "ritmx", " ", "ritmy", " ", 
+            RowBox[{"(", 
+             RowBox[{"ritmx", "+", "ritmy"}], ")"}]}], "-", 
+           RowBox[{
+            SuperscriptBox["\[ExponentialE]", 
+             RowBox[{"\[ImaginaryI]", " ", 
+              RowBox[{"(", 
+               RowBox[{"phix", "+", 
+                RowBox[{"2", " ", "PhiX"}], "+", "phiy"}], ")"}]}]], " ", 
+            SuperscriptBox["retmy", "2"], " ", "ritmx", " ", "ritmy", " ", 
+            RowBox[{"(", 
+             RowBox[{"ritmx", "+", "ritmy"}], ")"}]}], "+", 
+           RowBox[{
+            SuperscriptBox["\[ExponentialE]", 
+             RowBox[{"\[ImaginaryI]", " ", 
+              RowBox[{"(", 
+               RowBox[{"phix", "+", "phiy"}], ")"}]}]], " ", 
+            SuperscriptBox["retmx", "2"], " ", 
+            SuperscriptBox["retmy", "2"], " ", "ritmx", " ", "ritmy", " ", 
+            RowBox[{"(", 
+             RowBox[{"ritmx", "+", "ritmy"}], ")"}]}], "-", 
+           RowBox[{
+            SuperscriptBox["\[ExponentialE]", 
+             RowBox[{"\[ImaginaryI]", " ", 
+              RowBox[{"(", 
+               RowBox[{"PhiX", "+", 
+                RowBox[{"3", " ", "phiy"}], "+", 
+                RowBox[{"2", " ", "PhiY"}]}], ")"}]}]], " ", "retmx", " ", 
+            SuperscriptBox["titmx", "2"]}], "+", 
+           RowBox[{
+            SuperscriptBox["\[ExponentialE]", 
+             RowBox[{"\[ImaginaryI]", " ", 
+              RowBox[{"(", 
+               RowBox[{"PhiX", "+", 
+                RowBox[{"3", " ", "phiy"}]}], ")"}]}]], " ", "retmx", " ", 
+            SuperscriptBox["retmy", "2"], " ", 
+            SuperscriptBox["titmx", "2"]}], "-", 
+           RowBox[{
+            SuperscriptBox["\[ExponentialE]", 
+             RowBox[{"\[ImaginaryI]", " ", 
+              RowBox[{"(", 
+               RowBox[{"PhiX", "+", "phiy", "+", 
+                RowBox[{"2", " ", "PhiY"}]}], ")"}]}]], " ", "retmx", " ", 
+            "ritmy", " ", 
+            RowBox[{"(", 
+             RowBox[{"ritmx", "+", "ritmy"}], ")"}], " ", 
+            SuperscriptBox["titmx", "2"]}], "+", 
+           RowBox[{
+            SuperscriptBox["\[ExponentialE]", 
+             RowBox[{"\[ImaginaryI]", " ", 
+              RowBox[{"(", 
+               RowBox[{"PhiX", "+", "phiy"}], ")"}]}]], " ", "retmx", " ", 
+            SuperscriptBox["retmy", "2"], " ", "ritmy", " ", 
+            RowBox[{"(", 
+             RowBox[{"ritmx", "+", "ritmy"}], ")"}], " ", 
+            SuperscriptBox["titmx", "2"]}], "-", 
+           RowBox[{
+            SuperscriptBox["\[ExponentialE]", 
+             RowBox[{"\[ImaginaryI]", " ", 
+              RowBox[{"(", 
+               RowBox[{
+                RowBox[{"3", " ", "phix"}], "+", 
+                RowBox[{"2", " ", "PhiX"}], "+", "PhiY"}], ")"}]}]], " ", 
+            "retmy", " ", 
+            SuperscriptBox["titmy", "2"]}], "+", 
+           RowBox[{
+            SuperscriptBox["\[ExponentialE]", 
+             RowBox[{"\[ImaginaryI]", " ", 
+              RowBox[{"(", 
+               RowBox[{
+                RowBox[{"3", " ", "phix"}], "+", "PhiY"}], ")"}]}]], " ", 
+            SuperscriptBox["retmx", "2"], " ", "retmy", " ", 
+            SuperscriptBox["titmy", "2"]}], "-", 
+           RowBox[{
+            SuperscriptBox["\[ExponentialE]", 
+             RowBox[{"\[ImaginaryI]", " ", 
+              RowBox[{"(", 
+               RowBox[{"phix", "+", 
+                RowBox[{"2", " ", "PhiX"}], "+", "PhiY"}], ")"}]}]], " ", 
+            "retmy", " ", "ritmx", " ", 
+            RowBox[{"(", 
+             RowBox[{"ritmx", "+", "ritmy"}], ")"}], " ", 
+            SuperscriptBox["titmy", "2"]}], "+", 
+           RowBox[{
+            SuperscriptBox["\[ExponentialE]", 
+             RowBox[{"\[ImaginaryI]", " ", 
+              RowBox[{"(", 
+               RowBox[{"phix", "+", "PhiY"}], ")"}]}]], " ", 
+            SuperscriptBox["retmx", "2"], " ", "retmy", " ", "ritmx", " ", 
+            RowBox[{"(", 
+             RowBox[{"ritmx", "+", "ritmy"}], ")"}], " ", 
+            SuperscriptBox["titmy", "2"]}], "+", 
+           RowBox[{
+            SuperscriptBox["\[ExponentialE]", 
+             RowBox[{"\[ImaginaryI]", " ", 
+              RowBox[{"(", 
+               RowBox[{"PhiX", "+", "PhiY"}], ")"}]}]], " ", "retmx", " ", 
+            "retmy", " ", 
+            RowBox[{"(", 
+             RowBox[{"ritmx", "+", "ritmy"}], ")"}], " ", 
+            SuperscriptBox["titmx", "2"], " ", 
+            SuperscriptBox["titmy", "2"]}]}], ")"}]}], 
+        RowBox[{
+         RowBox[{"(", 
+          RowBox[{
+           SuperscriptBox["\[ExponentialE]", 
+            RowBox[{
+             RowBox[{"3", " ", "\[ImaginaryI]", " ", "phix"}], "+", 
+             RowBox[{"2", " ", "\[ImaginaryI]", " ", "PhiX"}]}]], "-", 
+           RowBox[{
+            SuperscriptBox["\[ExponentialE]", 
+             RowBox[{"3", " ", "\[ImaginaryI]", " ", "phix"}]], " ", 
+            SuperscriptBox["retmx", "2"]}], "+", 
+           RowBox[{
+            SuperscriptBox["\[ExponentialE]", 
+             RowBox[{"\[ImaginaryI]", " ", 
+              RowBox[{"(", 
+               RowBox[{"phix", "+", 
+                RowBox[{"2", " ", "PhiX"}]}], ")"}]}]], " ", 
+            SuperscriptBox["ritmx", "2"]}], "-", 
+           RowBox[{
+            SuperscriptBox["\[ExponentialE]", 
+             RowBox[{"\[ImaginaryI]", " ", "phix"}]], " ", 
+            SuperscriptBox["retmx", "2"], " ", 
+            SuperscriptBox["ritmx", "2"]}], "-", 
+           RowBox[{
+            SuperscriptBox["\[ExponentialE]", 
+             RowBox[{"\[ImaginaryI]", " ", "PhiX"}]], " ", "retmx", " ", 
+            "ritmx", " ", 
+            SuperscriptBox["titmx", "2"]}]}], ")"}], " ", 
+         RowBox[{"(", 
+          RowBox[{
+           SuperscriptBox["\[ExponentialE]", 
+            RowBox[{
+             RowBox[{"3", " ", "\[ImaginaryI]", " ", "phiy"}], "+", 
+             RowBox[{"2", " ", "\[ImaginaryI]", " ", "PhiY"}]}]], "-", 
+           RowBox[{
+            SuperscriptBox["\[ExponentialE]", 
+             RowBox[{"3", " ", "\[ImaginaryI]", " ", "phiy"}]], " ", 
+            SuperscriptBox["retmy", "2"]}], "+", 
+           RowBox[{
+            SuperscriptBox["\[ExponentialE]", 
+             RowBox[{"\[ImaginaryI]", " ", 
+              RowBox[{"(", 
+               RowBox[{"phiy", "+", 
+                RowBox[{"2", " ", "PhiY"}]}], ")"}]}]], " ", 
+            SuperscriptBox["ritmy", "2"]}], "-", 
+           RowBox[{
+            SuperscriptBox["\[ExponentialE]", 
+             RowBox[{"\[ImaginaryI]", " ", "phiy"}]], " ", 
+            SuperscriptBox["retmy", "2"], " ", 
+            SuperscriptBox["ritmy", "2"]}], "-", 
+           RowBox[{
+            SuperscriptBox["\[ExponentialE]", 
+             RowBox[{"\[ImaginaryI]", " ", "PhiY"}]], " ", "retmy", " ", 
+            "ritmy", " ", 
+            SuperscriptBox["titmy", "2"]}]}], ")"}]}]]}], 
+      FractionBox[
+       RowBox[{"rbs", " ", 
+        RowBox[{"(", 
+         RowBox[{
+          RowBox[{
+           RowBox[{"-", 
+            SuperscriptBox["\[ExponentialE]", 
+             RowBox[{"\[ImaginaryI]", " ", 
+              RowBox[{"(", 
+               RowBox[{"phix", "+", 
+                RowBox[{"2", " ", "PhiX"}]}], ")"}]}]]}], " ", "ritmx"}], "+", 
+          RowBox[{
+           SuperscriptBox["\[ExponentialE]", 
+            RowBox[{"\[ImaginaryI]", " ", "phix"}]], " ", 
+           SuperscriptBox["retmx", "2"], " ", "ritmx"}], "+", 
+          RowBox[{
+           SuperscriptBox["\[ExponentialE]", 
+            RowBox[{"\[ImaginaryI]", " ", "PhiX"}]], " ", "retmx", " ", 
+           SuperscriptBox["titmx", "2"]}]}], ")"}]}], 
+       RowBox[{
+        SuperscriptBox["\[ExponentialE]", 
+         RowBox[{
+          RowBox[{"3", " ", "\[ImaginaryI]", " ", "phix"}], "+", 
+          RowBox[{"2", " ", "\[ImaginaryI]", " ", "PhiX"}]}]], "-", 
+        RowBox[{
+         SuperscriptBox["\[ExponentialE]", 
+          RowBox[{"3", " ", "\[ImaginaryI]", " ", "phix"}]], " ", 
+         SuperscriptBox["retmx", "2"]}], "+", 
+        RowBox[{
+         SuperscriptBox["\[ExponentialE]", 
+          RowBox[{"\[ImaginaryI]", " ", 
+           RowBox[{"(", 
+            RowBox[{"phix", "+", 
+             RowBox[{"2", " ", "PhiX"}]}], ")"}]}]], " ", 
+         SuperscriptBox["ritmx", "2"]}], "-", 
+        RowBox[{
+         SuperscriptBox["\[ExponentialE]", 
+          RowBox[{"\[ImaginaryI]", " ", "phix"}]], " ", 
+         SuperscriptBox["retmx", "2"], " ", 
+         SuperscriptBox["ritmx", "2"]}], "-", 
+        RowBox[{
+         SuperscriptBox["\[ExponentialE]", 
+          RowBox[{"\[ImaginaryI]", " ", "PhiX"}]], " ", "retmx", " ", "ritmx",
+          " ", 
+         SuperscriptBox["titmx", "2"]}]}]], 
+      FractionBox[
+       RowBox[{"tbs", " ", 
+        RowBox[{"(", 
+         RowBox[{
+          RowBox[{
+           SuperscriptBox["\[ExponentialE]", 
+            RowBox[{"\[ImaginaryI]", " ", 
+             RowBox[{"(", 
+              RowBox[{"phiy", "+", 
+               RowBox[{"2", " ", "PhiY"}]}], ")"}]}]], " ", "ritmy"}], "-", 
+          RowBox[{
+           SuperscriptBox["\[ExponentialE]", 
+            RowBox[{"\[ImaginaryI]", " ", "phiy"}]], " ", 
+           SuperscriptBox["retmy", "2"], " ", "ritmy"}], "-", 
+          RowBox[{
+           SuperscriptBox["\[ExponentialE]", 
+            RowBox[{"\[ImaginaryI]", " ", "PhiY"}]], " ", "retmy", " ", 
+           SuperscriptBox["titmy", "2"]}]}], ")"}]}], 
+       RowBox[{
+        SuperscriptBox["\[ExponentialE]", 
+         RowBox[{
+          RowBox[{"3", " ", "\[ImaginaryI]", " ", "phiy"}], "+", 
+          RowBox[{"2", " ", "\[ImaginaryI]", " ", "PhiY"}]}]], "-", 
+        RowBox[{
+         SuperscriptBox["\[ExponentialE]", 
+          RowBox[{"3", " ", "\[ImaginaryI]", " ", "phiy"}]], " ", 
+         SuperscriptBox["retmy", "2"]}], "+", 
+        RowBox[{
+         SuperscriptBox["\[ExponentialE]", 
+          RowBox[{"\[ImaginaryI]", " ", 
+           RowBox[{"(", 
+            RowBox[{"phiy", "+", 
+             RowBox[{"2", " ", "PhiY"}]}], ")"}]}]], " ", 
+         SuperscriptBox["ritmy", "2"]}], "-", 
+        RowBox[{
+         SuperscriptBox["\[ExponentialE]", 
+          RowBox[{"\[ImaginaryI]", " ", "phiy"}]], " ", 
+         SuperscriptBox["retmy", "2"], " ", 
+         SuperscriptBox["ritmy", "2"]}], "-", 
+        RowBox[{
+         SuperscriptBox["\[ExponentialE]", 
+          RowBox[{"\[ImaginaryI]", " ", "PhiY"}]], " ", "retmy", " ", "ritmy",
+          " ", 
+         SuperscriptBox["titmy", "2"]}]}]], 
+      FractionBox[
+       RowBox[{
+        SuperscriptBox["\[ExponentialE]", 
+         RowBox[{"\[ImaginaryI]", " ", 
+          RowBox[{"(", 
+           RowBox[{"phix", "+", "PhiX"}], ")"}]}]], " ", "rbs", " ", "retmx", 
+        " ", "titmx"}], 
+       RowBox[{
+        SuperscriptBox["\[ExponentialE]", 
+         RowBox[{
+          RowBox[{"3", " ", "\[ImaginaryI]", " ", "phix"}], "+", 
+          RowBox[{"2", " ", "\[ImaginaryI]", " ", "PhiX"}]}]], "-", 
+        RowBox[{
+         SuperscriptBox["\[ExponentialE]", 
+          RowBox[{"3", " ", "\[ImaginaryI]", " ", "phix"}]], " ", 
+         SuperscriptBox["retmx", "2"]}], "+", 
+        RowBox[{
+         SuperscriptBox["\[ExponentialE]", 
+          RowBox[{"\[ImaginaryI]", " ", 
+           RowBox[{"(", 
+            RowBox[{"phix", "+", 
+             RowBox[{"2", " ", "PhiX"}]}], ")"}]}]], " ", 
+         SuperscriptBox["ritmx", "2"]}], "-", 
+        RowBox[{
+         SuperscriptBox["\[ExponentialE]", 
+          RowBox[{"\[ImaginaryI]", " ", "phix"}]], " ", 
+         SuperscriptBox["retmx", "2"], " ", 
+         SuperscriptBox["ritmx", "2"]}], "-", 
+        RowBox[{
+         SuperscriptBox["\[ExponentialE]", 
+          RowBox[{"\[ImaginaryI]", " ", "PhiX"}]], " ", "retmx", " ", "ritmx",
+          " ", 
+         SuperscriptBox["titmx", "2"]}]}]], 
+      RowBox[{"-", 
+       FractionBox[
+        RowBox[{
+         SuperscriptBox["\[ExponentialE]", 
+          RowBox[{"\[ImaginaryI]", " ", 
+           RowBox[{"(", 
+            RowBox[{"phix", "+", 
+             RowBox[{"2", " ", "PhiX"}]}], ")"}]}]], " ", "rbs", " ", 
+         "titmx"}], 
+        RowBox[{
+         SuperscriptBox["\[ExponentialE]", 
+          RowBox[{
+           RowBox[{"3", " ", "\[ImaginaryI]", " ", "phix"}], "+", 
+           RowBox[{"2", " ", "\[ImaginaryI]", " ", "PhiX"}]}]], "-", 
+         RowBox[{
+          SuperscriptBox["\[ExponentialE]", 
+           RowBox[{"3", " ", "\[ImaginaryI]", " ", "phix"}]], " ", 
+          SuperscriptBox["retmx", "2"]}], "+", 
+         RowBox[{
+          SuperscriptBox["\[ExponentialE]", 
+           RowBox[{"\[ImaginaryI]", " ", 
+            RowBox[{"(", 
+             RowBox[{"phix", "+", 
+              RowBox[{"2", " ", "PhiX"}]}], ")"}]}]], " ", 
+          SuperscriptBox["ritmx", "2"]}], "-", 
+         RowBox[{
+          SuperscriptBox["\[ExponentialE]", 
+           RowBox[{"\[ImaginaryI]", " ", "phix"}]], " ", 
+          SuperscriptBox["retmx", "2"], " ", 
+          SuperscriptBox["ritmx", "2"]}], "-", 
+         RowBox[{
+          SuperscriptBox["\[ExponentialE]", 
+           RowBox[{"\[ImaginaryI]", " ", "PhiX"}]], " ", "retmx", " ", 
+          "ritmx", " ", 
+          SuperscriptBox["titmx", "2"]}]}]]}], 
+      RowBox[{"-", 
+       FractionBox[
+        RowBox[{
+         SuperscriptBox["\[ExponentialE]", 
+          RowBox[{"\[ImaginaryI]", " ", 
+           RowBox[{"(", 
+            RowBox[{"phiy", "+", "PhiY"}], ")"}]}]], " ", "retmy", " ", "tbs",
+          " ", "titmy"}], 
+        RowBox[{
+         SuperscriptBox["\[ExponentialE]", 
+          RowBox[{
+           RowBox[{"3", " ", "\[ImaginaryI]", " ", "phiy"}], "+", 
+           RowBox[{"2", " ", "\[ImaginaryI]", " ", "PhiY"}]}]], "-", 
+         RowBox[{
+          SuperscriptBox["\[ExponentialE]", 
+           RowBox[{"3", " ", "\[ImaginaryI]", " ", "phiy"}]], " ", 
+          SuperscriptBox["retmy", "2"]}], "+", 
+         RowBox[{
+          SuperscriptBox["\[ExponentialE]", 
+           RowBox[{"\[ImaginaryI]", " ", 
+            RowBox[{"(", 
+             RowBox[{"phiy", "+", 
+              RowBox[{"2", " ", "PhiY"}]}], ")"}]}]], " ", 
+          SuperscriptBox["ritmy", "2"]}], "-", 
+         RowBox[{
+          SuperscriptBox["\[ExponentialE]", 
+           RowBox[{"\[ImaginaryI]", " ", "phiy"}]], " ", 
+          SuperscriptBox["retmy", "2"], " ", 
+          SuperscriptBox["ritmy", "2"]}], "-", 
+         RowBox[{
+          SuperscriptBox["\[ExponentialE]", 
+           RowBox[{"\[ImaginaryI]", " ", "PhiY"}]], " ", "retmy", " ", 
+          "ritmy", " ", 
+          SuperscriptBox["titmy", "2"]}]}]]}], 
+      FractionBox[
+       RowBox[{
+        SuperscriptBox["\[ExponentialE]", 
+         RowBox[{"\[ImaginaryI]", " ", 
+          RowBox[{"(", 
+           RowBox[{"phiy", "+", 
+            RowBox[{"2", " ", "PhiY"}]}], ")"}]}]], " ", "tbs", " ", 
+        "titmy"}], 
+       RowBox[{
+        SuperscriptBox["\[ExponentialE]", 
+         RowBox[{
+          RowBox[{"3", " ", "\[ImaginaryI]", " ", "phiy"}], "+", 
+          RowBox[{"2", " ", "\[ImaginaryI]", " ", "PhiY"}]}]], "-", 
+        RowBox[{
+         SuperscriptBox["\[ExponentialE]", 
+          RowBox[{"3", " ", "\[ImaginaryI]", " ", "phiy"}]], " ", 
+         SuperscriptBox["retmy", "2"]}], "+", 
+        RowBox[{
+         SuperscriptBox["\[ExponentialE]", 
+          RowBox[{"\[ImaginaryI]", " ", 
+           RowBox[{"(", 
+            RowBox[{"phiy", "+", 
+             RowBox[{"2", " ", "PhiY"}]}], ")"}]}]], " ", 
+         SuperscriptBox["ritmy", "2"]}], "-", 
+        RowBox[{
+         SuperscriptBox["\[ExponentialE]", 
+          RowBox[{"\[ImaginaryI]", " ", "phiy"}]], " ", 
+         SuperscriptBox["retmy", "2"], " ", 
+         SuperscriptBox["ritmy", "2"]}], "-", 
+        RowBox[{
+         SuperscriptBox["\[ExponentialE]", 
+          RowBox[{"\[ImaginaryI]", " ", "PhiY"}]], " ", "retmy", " ", "ritmy",
+          " ", 
+         SuperscriptBox["titmy", "2"]}]}]], 
+      RowBox[{"-", 
+       FractionBox[
+        RowBox[{
+         SuperscriptBox["\[ExponentialE]", 
+          RowBox[{"2", " ", "\[ImaginaryI]", " ", "phix"}]], " ", "rbs", " ", 
+         
+         RowBox[{"(", 
+          RowBox[{
+           SuperscriptBox["\[ExponentialE]", 
+            RowBox[{"2", " ", "\[ImaginaryI]", " ", "PhiX"}]], "-", 
+           SuperscriptBox["retmx", "2"]}], ")"}]}], 
+        RowBox[{
+         SuperscriptBox["\[ExponentialE]", 
+          RowBox[{
+           RowBox[{"3", " ", "\[ImaginaryI]", " ", "phix"}], "+", 
+           RowBox[{"2", " ", "\[ImaginaryI]", " ", "PhiX"}]}]], "-", 
+         RowBox[{
+          SuperscriptBox["\[ExponentialE]", 
+           RowBox[{"3", " ", "\[ImaginaryI]", " ", "phix"}]], " ", 
+          SuperscriptBox["retmx", "2"]}], "+", 
+         RowBox[{
+          SuperscriptBox["\[ExponentialE]", 
+           RowBox[{"\[ImaginaryI]", " ", 
+            RowBox[{"(", 
+             RowBox[{"phix", "+", 
+              RowBox[{"2", " ", "PhiX"}]}], ")"}]}]], " ", 
+          SuperscriptBox["ritmx", "2"]}], "-", 
+         RowBox[{
+          SuperscriptBox["\[ExponentialE]", 
+           RowBox[{"\[ImaginaryI]", " ", "phix"}]], " ", 
+          SuperscriptBox["retmx", "2"], " ", 
+          SuperscriptBox["ritmx", "2"]}], "-", 
+         RowBox[{
+          SuperscriptBox["\[ExponentialE]", 
+           RowBox[{"\[ImaginaryI]", " ", "PhiX"}]], " ", "retmx", " ", 
+          "ritmx", " ", 
+          SuperscriptBox["titmx", "2"]}]}]]}], 
+      FractionBox[
+       RowBox[{
+        SuperscriptBox["\[ExponentialE]", 
+         RowBox[{"2", " ", "\[ImaginaryI]", " ", "phiy"}]], " ", 
+        RowBox[{"(", 
+         RowBox[{
+          SuperscriptBox["\[ExponentialE]", 
+           RowBox[{"2", " ", "\[ImaginaryI]", " ", "PhiY"}]], "-", 
+          SuperscriptBox["retmy", "2"]}], ")"}], " ", "tbs"}], 
+       RowBox[{
+        SuperscriptBox["\[ExponentialE]", 
+         RowBox[{
+          RowBox[{"3", " ", "\[ImaginaryI]", " ", "phiy"}], "+", 
+          RowBox[{"2", " ", "\[ImaginaryI]", " ", "PhiY"}]}]], "-", 
+        RowBox[{
+         SuperscriptBox["\[ExponentialE]", 
+          RowBox[{"3", " ", "\[ImaginaryI]", " ", "phiy"}]], " ", 
+         SuperscriptBox["retmy", "2"]}], "+", 
+        RowBox[{
+         SuperscriptBox["\[ExponentialE]", 
+          RowBox[{"\[ImaginaryI]", " ", 
+           RowBox[{"(", 
+            RowBox[{"phiy", "+", 
+             RowBox[{"2", " ", "PhiY"}]}], ")"}]}]], " ", 
+         SuperscriptBox["ritmy", "2"]}], "-", 
+        RowBox[{
+         SuperscriptBox["\[ExponentialE]", 
+          RowBox[{"\[ImaginaryI]", " ", "phiy"}]], " ", 
+         SuperscriptBox["retmy", "2"], " ", 
+         SuperscriptBox["ritmy", "2"]}], "-", 
+        RowBox[{
+         SuperscriptBox["\[ExponentialE]", 
+          RowBox[{"\[ImaginaryI]", " ", "PhiY"}]], " ", "retmy", " ", "ritmy",
+          " ", 
+         SuperscriptBox["titmy", "2"]}]}]], "0", "1"}
+    },
+    GridBoxAlignment->{"Columns" -> {{Center}}, "Rows" -> {{Baseline}}},
+    GridBoxSpacings->{"Columns" -> {
+        Offset[0.27999999999999997`], {
+         Offset[0.7]}, 
+        Offset[0.27999999999999997`]}, "Rows" -> {
+        Offset[0.2], {
+         Offset[0.4]}, 
+        Offset[0.2]}}], "\[NoBreak]", ")"}],
+  Function[BoxForm`e$, 
+   MatrixForm[BoxForm`e$]]]], "Output",
+ CellChangeTimes->{3.985011352315632*^9},
+ CellLabel->
+  "Out[73]//MatrixForm=",ExpressionUUID->"f1d2b096-c552-4b66-abef-\
+5c9ec9ef99e1"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"EasOverEin", "=", 
+  RowBox[{"FullSimplify", "[", 
+   RowBox[{"Minv", "[", 
+    RowBox[{"[", 
+     RowBox[{"10", ",", "1"}], "]"}], "]"}], "]"}]}]], "Input",
+ CellChangeTimes->{{3.9850114058584414`*^9, 3.985011405861364*^9}},
+ CellLabel->"In[74]:=",ExpressionUUID->"1c849556-7510-4f57-8869-b2934c27e3bf"],
+
+Cell[BoxData[
+ RowBox[{
+  FractionBox["1", 
+   RowBox[{
+    SuperscriptBox["\[ExponentialE]", 
+     RowBox[{"2", " ", "\[ImaginaryI]", " ", "phiy"}]], "+", 
+    SuperscriptBox["ritmy", "2"]}]], 
+  RowBox[{"(", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{
+        SuperscriptBox["\[ExponentialE]", 
+         RowBox[{"\[ImaginaryI]", " ", "phix"}]], " ", 
+        SuperscriptBox["retmx", "2"], " ", 
+        RowBox[{"(", 
+         RowBox[{
+          RowBox[{
+           SuperscriptBox["\[ExponentialE]", 
+            RowBox[{"2", " ", "\[ImaginaryI]", " ", "phix"}]], " ", 
+           SuperscriptBox["rbs", "2"], " ", "ritmy"}], "-", 
+          RowBox[{
+           SuperscriptBox["\[ExponentialE]", 
+            RowBox[{"2", " ", "\[ImaginaryI]", " ", "phiy"}]], " ", "ritmx", " ", 
+           SuperscriptBox["tbs", "2"]}], "+", 
+          RowBox[{"ritmx", " ", "ritmy", " ", 
+           RowBox[{"(", 
+            RowBox[{
+             RowBox[{
+              SuperscriptBox["rbs", "2"], " ", "ritmx"}], "-", 
+             RowBox[{"ritmy", " ", 
+              SuperscriptBox["tbs", "2"]}]}], ")"}]}]}], ")"}]}], "+", 
+       RowBox[{
+        SuperscriptBox["\[ExponentialE]", 
+         RowBox[{"\[ImaginaryI]", " ", 
+          RowBox[{"(", 
+           RowBox[{"phix", "+", 
+            RowBox[{"2", " ", "PhiX"}]}], ")"}]}]], " ", 
+        RowBox[{"(", 
+         RowBox[{
+          RowBox[{
+           RowBox[{"-", 
+            SuperscriptBox["\[ExponentialE]", 
+             RowBox[{"2", " ", "\[ImaginaryI]", " ", "phix"}]]}], " ", 
+           SuperscriptBox["rbs", "2"], " ", "ritmy"}], "+", 
+          RowBox[{
+           SuperscriptBox["\[ExponentialE]", 
+            RowBox[{"2", " ", "\[ImaginaryI]", " ", "phiy"}]], " ", "ritmx", " ", 
+           SuperscriptBox["tbs", "2"]}], "+", 
+          RowBox[{"ritmx", " ", "ritmy", " ", 
+           RowBox[{"(", 
+            RowBox[{
+             RowBox[{
+              RowBox[{"-", 
+               SuperscriptBox["rbs", "2"]}], " ", "ritmx"}], "+", 
+             RowBox[{"ritmy", " ", 
+              SuperscriptBox["tbs", "2"]}]}], ")"}]}]}], ")"}]}], "+", 
+       RowBox[{
+        SuperscriptBox["\[ExponentialE]", 
+         RowBox[{"\[ImaginaryI]", " ", "PhiX"}]], " ", "retmx", " ", 
+        RowBox[{"(", 
+         RowBox[{
+          RowBox[{
+           SuperscriptBox["rbs", "2"], " ", "ritmx", " ", "ritmy"}], "-", 
+          RowBox[{
+           RowBox[{"(", 
+            RowBox[{
+             SuperscriptBox["\[ExponentialE]", 
+              RowBox[{"2", " ", "\[ImaginaryI]", " ", "phiy"}]], "+", 
+             SuperscriptBox["ritmy", "2"]}], ")"}], " ", 
+           SuperscriptBox["tbs", "2"]}]}], ")"}], " ", 
+        SuperscriptBox["titmx", "2"]}]}], ")"}], "/", 
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{
+        SuperscriptBox["\[ExponentialE]", 
+         RowBox[{"\[ImaginaryI]", " ", 
+          RowBox[{"(", 
+           RowBox[{"phix", "+", 
+            RowBox[{"2", " ", "PhiX"}]}], ")"}]}]], " ", 
+        RowBox[{"(", 
+         RowBox[{
+          SuperscriptBox["\[ExponentialE]", 
+           RowBox[{"2", " ", "\[ImaginaryI]", " ", "phix"}]], "+", 
+          SuperscriptBox["ritmx", "2"]}], ")"}]}], "-", 
+       RowBox[{
+        SuperscriptBox["\[ExponentialE]", 
+         RowBox[{"\[ImaginaryI]", " ", "phix"}]], " ", 
+        SuperscriptBox["retmx", "2"], " ", 
+        RowBox[{"(", 
+         RowBox[{
+          SuperscriptBox["\[ExponentialE]", 
+           RowBox[{"2", " ", "\[ImaginaryI]", " ", "phix"}]], "+", 
+          SuperscriptBox["ritmx", "2"]}], ")"}]}], "-", 
+       RowBox[{
+        SuperscriptBox["\[ExponentialE]", 
+         RowBox[{"\[ImaginaryI]", " ", "PhiX"}]], " ", "retmx", " ", "ritmx", 
+        " ", 
+        SuperscriptBox["titmx", "2"]}]}], ")"}]}], "+", 
+    FractionBox[
+     RowBox[{
+      SuperscriptBox["\[ExponentialE]", 
+       RowBox[{"\[ImaginaryI]", " ", 
+        RowBox[{"(", 
+         RowBox[{
+          RowBox[{"2", " ", "phiy"}], "+", "PhiY"}], ")"}]}]], " ", 
+      SuperscriptBox["rbs", "2"], " ", "retmy", " ", 
+      SuperscriptBox["titmy", "2"]}], 
+     RowBox[{
+      RowBox[{
+       SuperscriptBox["\[ExponentialE]", 
+        RowBox[{"\[ImaginaryI]", " ", 
+         RowBox[{"(", 
+          RowBox[{"phiy", "+", 
+           RowBox[{"2", " ", "PhiY"}]}], ")"}]}]], " ", 
+       RowBox[{"(", 
+        RowBox[{
+         SuperscriptBox["\[ExponentialE]", 
+          RowBox[{"2", " ", "\[ImaginaryI]", " ", "phiy"}]], "+", 
+         SuperscriptBox["ritmy", "2"]}], ")"}]}], "-", 
+      RowBox[{
+       SuperscriptBox["\[ExponentialE]", 
+        RowBox[{"\[ImaginaryI]", " ", "phiy"}]], " ", 
+       SuperscriptBox["retmy", "2"], " ", 
+       RowBox[{"(", 
+        RowBox[{
+         SuperscriptBox["\[ExponentialE]", 
+          RowBox[{"2", " ", "\[ImaginaryI]", " ", "phiy"}]], "+", 
+         SuperscriptBox["ritmy", "2"]}], ")"}]}], "-", 
+      RowBox[{
+       SuperscriptBox["\[ExponentialE]", 
+        RowBox[{"\[ImaginaryI]", " ", "PhiY"}]], " ", "retmy", " ", "ritmy", " ", 
+       SuperscriptBox["titmy", "2"]}]}]]}], ")"}]}]], "Output",
+ CellChangeTimes->{3.9850114140976133`*^9},
+ CellLabel->"Out[74]=",ExpressionUUID->"001d672d-e162-4ed6-9e28-9d99a058417c"]
+}, Open  ]]
+},
+WindowSize->{808, 616},
+WindowMargins->{{Automatic, 123}, {Automatic, 42}},
+FrontEndVersion->"14.2 for Mac OS X ARM (64-bit) (March 16, 2025)",
+StyleDefinitions->"Default.nb",
+ExpressionUUID->"78989656-c83a-4268-9d2c-d53fa81d4083"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[576, 22, 5305, 145, 397, "Input",ExpressionUUID->"c4d14a5c-50ad-4289-bda1-83ad18d1645e"],
+Cell[5884, 169, 105246, 2606, 402, "Output",ExpressionUUID->"f1d2b096-c552-4b66-abef-5c9ec9ef99e1"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[111167, 2780, 328, 7, 29, "Input",ExpressionUUID->"1c849556-7510-4f57-8869-b2934c27e3bf"],
+Cell[111498, 2789, 5214, 135, 253, "Output",ExpressionUUID->"001d672d-e162-4ed6-9e28-9d99a058417c"]
+}, Open  ]]
+}
+]
+*)
+
